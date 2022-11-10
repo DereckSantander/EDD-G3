@@ -4,40 +4,151 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fillWidth="false" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.PrimaryController">
    <children>
-      <HBox alignment="CENTER" prefHeight="76.0" prefWidth="713.0" />
-      <HBox alignment="CENTER" prefHeight="357.0" prefWidth="1600.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
          <children>
-            <Button mnemonicParsing="false" text="&lt;">
+            <HBox prefHeight="100.0" prefWidth="400.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <Label text="DMJ">
+                     <font>
+                        <Font name="Futura Medium" size="65.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <Button fx:id="btnTusJuegos" mnemonicParsing="false" prefHeight="48.0" text="Tus juegos">
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCarrito" mnemonicParsing="false" prefHeight="48.0" prefWidth="72.0" text="Carrito">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="350.0" prefWidth="1200.0">
+         <children>
+            <Button fx:id="btnCarrIzq" mnemonicParsing="false" text="&lt;">
                <HBox.margin>
-                  <Insets />
+                  <Insets right="25.0" />
                </HBox.margin>
             </Button>
-            <HBox prefHeight="326.0" prefWidth="1101.0" />
-            <Button mnemonicParsing="false" text="&gt;">
+            <HBox fx:id="hbCarrusel" prefHeight="350.0" prefWidth="1050.0" />
+            <Button fx:id="btnCarrDer" mnemonicParsing="false" text="&gt;">
                <HBox.margin>
-                  <Insets />
+                  <Insets left="25.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <AnchorPane prefHeight="433.0" prefWidth="1266.0">
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1200.0">
          <children>
-            <Label layoutX="14.0" layoutY="-12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="142.0" text="Géneros:">
+            <Label prefHeight="50.0" text="Géneros:">
                <font>
-                  <Font size="33.0" />
+                  <Font size="35.0" />
                </font>
+               <HBox.margin>
+                  <Insets right="750.0" />
+               </HBox.margin>
             </Label>
-            <TextField layoutX="841.0" layoutY="-3.0" prefHeight="36.0" prefWidth="238.0" promptText="Busca por título" />
-            <Button layoutX="1091.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="66.0" text="Buscar" />
-            <HBox layoutX="100.0" layoutY="50.0" prefHeight="314.0" prefWidth="629.0" />
+            <TextField prefHeight="35.0" prefWidth="160.0" promptText="Busque por título" />
+            <Button mnemonicParsing="false" prefHeight="35.0" text="Buscar">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Button>
          </children>
-      </AnchorPane>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1200.0">
+         <children>
+            <HBox fx:id="hbGeneros" alignment="CENTER" prefHeight="300.0" prefWidth="1000.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fx:id="imv1" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lbl1" text="Label">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fx:id="imv2" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lbl2" text="Label">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fx:id="imv3" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lbl3" text="Label">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fx:id="imv4" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lbl4" text="Label">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+               <children>
+                  <Button fx:id="btnGenUp" mnemonicParsing="false" text="^" />
+                  <Button fx:id="btnGenDown" mnemonicParsing="false" text="v">
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </VBox>
