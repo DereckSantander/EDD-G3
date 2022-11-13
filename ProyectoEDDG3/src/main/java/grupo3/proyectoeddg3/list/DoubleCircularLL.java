@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  * @author mbravop
  */
-public class doubleCircularLL<E> implements Iterable<E>{
+public class DoubleCircularLL<E> implements Iterable<E>{
 
     int longitud;
     Nodo<E> first;
@@ -37,7 +37,7 @@ public class doubleCircularLL<E> implements Iterable<E>{
         Nodo<E> i;
         int contador = 0;
         
-        public MyIterator(doubleCircularLL<E> listaDoblementeEnlazadaC){
+        public MyIterator(DoubleCircularLL<E> listaDoblementeEnlazadaC){
             i = (Nodo<E>)listaDoblementeEnlazadaC.first;
         }
         
@@ -67,8 +67,8 @@ public class doubleCircularLL<E> implements Iterable<E>{
         return null;
     }
     
-    public doubleCircularLL<E> encontrarTodo(Comparator<E> cmp, E obj){
-        doubleCircularLL<E> listaRetornar = new doubleCircularLL<>();
+    public DoubleCircularLL<E> encontrarTodo(Comparator<E> cmp, E obj){
+        DoubleCircularLL<E> listaRetornar = new DoubleCircularLL<>();
         for(E e: this){
             if(cmp.compare(e,obj) == 0){
                 listaRetornar.addLast(e);
@@ -77,7 +77,7 @@ public class doubleCircularLL<E> implements Iterable<E>{
         return listaRetornar;
     }
     
-    public doubleCircularLL(){
+    public DoubleCircularLL(){
         this.first = null;
         this.last = null;
         this.longitud = 0;

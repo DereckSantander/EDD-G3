@@ -13,14 +13,14 @@ public class Feedback {
     private String nombreUsuario;
     private String descripcion;
     private String fechaFeedback;
-    private int idJuego;
+    private String tituloJuego;
 
-    public Feedback(int valoracion, String nombreUsuario, String descripcion, String fechaFeedback, int idJuego) {
+    public Feedback(int valoracion, String nombreUsuario, String descripcion, String fechaFeedback, String tituloJuego) {
         this.valoracion = valoracion;
         this.nombreUsuario = nombreUsuario;
         this.descripcion = descripcion;
         this.fechaFeedback = fechaFeedback;
-        this.idJuego = idJuego;
+        this.tituloJuego = tituloJuego;
     }
    
     /*
