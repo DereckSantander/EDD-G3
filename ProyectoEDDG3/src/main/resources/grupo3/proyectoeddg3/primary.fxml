@@ -113,7 +113,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
                      <children>
-                        <ImageView fx:id="imv1" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imv1" fitHeight="238.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="lbl1" text="Label">
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -126,7 +126,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
                      <children>
-                        <ImageView fx:id="imv2" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imv2" fitHeight="238.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="lbl2" text="Label">
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -139,7 +139,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
                      <children>
-                        <ImageView fx:id="imv3" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imv3" fitHeight="238.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="lbl3" text="Label">
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -152,7 +152,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="300.0" prefWidth="250.0">
                      <children>
-                        <ImageView fx:id="imv4" fitHeight="220.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imv4" fitHeight="238.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
                         <Label fx:id="lbl4" text="Label">
                            <VBox.margin>
                               <Insets top="20.0" />
