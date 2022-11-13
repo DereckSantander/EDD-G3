@@ -49,10 +49,10 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         
         public boolean hasNext(){
             contador++;
-            return (i!=null && contador<=longitud);
+            return (i!=null && contador<=4);
         }
     }
-    // 6 4 5 1
+    
     public Iterator<E> iterator(){
         return new MyIterator(this);
     } 

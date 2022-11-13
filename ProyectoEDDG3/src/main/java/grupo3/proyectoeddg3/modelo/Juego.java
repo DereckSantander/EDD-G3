@@ -21,6 +21,36 @@ public class Juego {
     private String descripcion;
     private float precio;
     private DoubleCircularLL<Feedback> listaFeedback;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public String getDesarrolladores() {
+        return desarrolladores;
+    }
+
+    public String getFechaLanzamiento() {
+        return fechaLanzamiento;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public DoubleCircularLL<Feedback> getListaFeedback() {
+        return listaFeedback;
+    }
+    
+    
     
 
     public Juego(String titulo, String genero, String desarrolladores, String fechaLanzamiento, String descripcion, float precio) {
@@ -50,7 +80,7 @@ public class Juego {
         return listaJuegos;
     }
     
-    public static void cargarFeedback(String ruta){
+    public void cargarFeedback(String ruta){
         InputStream input = Feedback.class.getClassLoader().getResourceAsStream(ruta);
         try(BufferedReader br = new BufferedReader(new InputStreamReader(input)))
          {
