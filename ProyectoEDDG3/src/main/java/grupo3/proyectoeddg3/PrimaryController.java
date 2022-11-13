@@ -14,82 +14,39 @@ import javafx.scene.layout.HBox;
 
 public class PrimaryController {
     
-    @FXML
-    private Button btnCarrDer;
-
-    @FXML
-    private Button btnCarrIzq;
-
-    @FXML
-    private Button btnCarrito;
-
-    @FXML
-    private Button btnGenDown;
-
-    @FXML
-    private Button btnGenUp;
-
-    @FXML
-    private Button btnTusJuegos;
-
-    @FXML
-    private HBox hbCarrusel;
-
-    @FXML
-    private HBox hbGeneros;
-
-    @FXML
-    private ImageView imv1;
-
-    @FXML
-    private ImageView imv2;
-
-    @FXML
-    private ImageView imv3;
-
-    @FXML
-    private ImageView imv4;
-
-    @FXML
-    private ImageView imvC1;
-
-    @FXML
-    private ImageView imvC2;
-
-    @FXML
-    private ImageView imvC3;
-
-    @FXML
-    private ImageView imvC4;
-
-    @FXML
-    private Label lbl1;
-
-    @FXML
-    private Label lbl2;
-
-    @FXML
-    private Label lbl3;
-
-    @FXML
-    private Label lbl4;
-
-    @FXML
-    private TextField txtFecha;
-
-    @FXML
-    private TextField txtTitulo;
+    @FXML private Button btnCarrDer;
+    @FXML private Button btnCarrIzq;
+    @FXML private Button btnCarrito;
+    @FXML private Button btnGenDown;
+    @FXML private Button btnGenUp;
+    @FXML private Button btnTusJuegos;
+    @FXML private HBox hbCarrusel;
+    @FXML private HBox hbGeneros;
+    @FXML private ImageView imv1;
+    @FXML private ImageView imv2;
+    @FXML private ImageView imv3;
+    @FXML private ImageView imv4;
+    @FXML private ImageView imvC1;
+    @FXML private ImageView imvC2;
+    @FXML private ImageView imvC3;
+    @FXML private ImageView imvC4;
+    @FXML private Label lbl1;
+    @FXML private Label lbl2;
+    @FXML private Label lbl3;
+    @FXML private Label lbl4;
+    @FXML private TextField txtFecha;
+    @FXML private TextField txtTitulo;
     
     public void initialize(){
         //JUEGOS DESTACADOS
-        DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("destacados.txt");
-        imvC1.setImage(new Image(listaJuegos.getIndex(0).getTitulo()+".png"));
-        imvC2.setImage(new Image(listaJuegos.getIndex(1).getTitulo()+".png"));
-        imvC3.setImage(new Image(listaJuegos.getIndex(2).getTitulo()+".png"));
-        imvC4.setImage(new Image(listaJuegos.getIndex(3).getTitulo()+".png"));
+        DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("archivos/juegos.txt");
+        App.setImage(listaJuegos.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
+        App.setImage(listaJuegos.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
+        App.setImage(listaJuegos.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
+        App.setImage(listaJuegos.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4);
         
-        //JUEGOS CATEGORIAS
-        DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("categorias.txt");
+        /*JUEGOS CATEGORIAS
+        DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("src/main/resources/grupo3/proyectoeddg3/juegos.txt");
         imv1.setImage(new Image(listaCategorias.getIndex(0).getTitulo()+".png"));
         lbl1.setText(listaCategorias.getIndex(0).getTitulo());
         imv2.setImage(new Image(listaCategorias.getIndex(1).getTitulo()+".png"));
@@ -97,7 +54,7 @@ public class PrimaryController {
         imv3.setImage(new Image(listaCategorias.getIndex(2).getTitulo()+".png"));
         lbl3.setText(listaCategorias.getIndex(2).getTitulo());
         imv4.setImage(new Image(listaCategorias.getIndex(3).getTitulo()+".png"));
-        lbl4.setText(listaCategorias.getIndex(3).getTitulo());
+        lbl4.setText(listaCategorias.getIndex(3).getTitulo());*/
     }
     
     @FXML

@@ -5,6 +5,7 @@
 package grupo3.proyectoeddg3.modelo;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -64,8 +65,7 @@ public class Juego {
     
     public static DoubleCircularLL<Juego> cargarJuegos(String ruta){
         DoubleCircularLL<Juego> listaJuegos = new DoubleCircularLL<>();
-        InputStream input = Juego.class.getClassLoader().getResourceAsStream(ruta);
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(input)))
+        try(BufferedReader br=new BufferedReader(new FileReader(ruta));)
          {
             String line;
             while ((line = br.readLine()) != null) {
