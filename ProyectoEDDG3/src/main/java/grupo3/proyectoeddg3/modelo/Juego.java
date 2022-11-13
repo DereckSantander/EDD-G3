@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grupo3.proyectoeddg3.modelo;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import java.io.BufferedReader;
@@ -9,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import grupo3.proyectoeddg3.PrimaryController;
 /**
  *
  * @author mbravop
@@ -22,6 +20,8 @@ public class Juego {
     private String descripcion;
     private float precio;
     private DoubleCircularLL<Feedback> listaFeedback;
+    
+    public static DoubleCircularLL<Juego> juegosEncontrados;
 
     public String getTitulo() {
         return titulo;
@@ -65,7 +65,7 @@ public class Juego {
     
     public static DoubleCircularLL<Juego> cargarJuegos(String ruta){
         DoubleCircularLL<Juego> listaJuegos = new DoubleCircularLL<>();
-        try(BufferedReader br=new BufferedReader(new FileReader(ruta));)
+        try(BufferedReader br=new BufferedReader(new FileReader(ruta)))
          {
             String line;
             while ((line = br.readLine()) != null) {
@@ -81,8 +81,7 @@ public class Juego {
     }
     
     public void cargarFeedback(String ruta){
-        InputStream input = Feedback.class.getClassLoader().getResourceAsStream(ruta);
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(input)))
+        try(BufferedReader br=new BufferedReader(new FileReader(ruta)))
          {
             String line;
             while ((line = br.readLine()) != null) {
@@ -98,5 +97,47 @@ public class Juego {
             e.printStackTrace();
         } 
     }
+    
+    public static Juego buscarPorTitulo(String titulo){
+        
+        Juego j=null;
+        for(Juego a: PrimaryController.listaJuegos){
+            if(a.getTitulo().equals(titulo))
+                j=a;
+        }
+        
+        return j;
+        
+    }
+    
+    public static DoubleCircularLL<Juego> juegosEncontrados(String busqueda, String año){
+        
+        juegosEncontrados=null;
+        
+        if(busqueda.length()!=0 && año.length()!=0){
+            System.out.println("busco por ambos");
+            PrimaryController.busqueda="Resultados de: '"+ busqueda +"' del año "+año;
+        } else if(busqueda.length()!=0 && año.length()==0){
+            System.out.println("busco por titulo");
+            PrimaryController.busqueda="Resultados de: '"+ busqueda +"'";
+        } else if(busqueda.length()==0 && año.length()!=0){
+            System.out.println("busco por año");
+            PrimaryController.busqueda="Resultados de juegos del año: "+año;
+        } 
+        
+        return juegosEncontrados;
+        
+    }
+    
+    public static DoubleCircularLL<Juego> juegosGenero(String genero){
+        
+        juegosEncontrados=null;
+        
+        System.out.println("busco por genero");
+        
+        return juegosEncontrados;
+        
+    }
+    
         
 }

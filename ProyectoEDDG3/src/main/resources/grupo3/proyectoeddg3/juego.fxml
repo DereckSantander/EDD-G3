@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.SecondaryController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.SecondaryController">
    <children>
       <HBox prefHeight="100.0" prefWidth="1200.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="400.0">
                <children>
-                  <Button fx:id="btnVolver" mnemonicParsing="false" prefHeight="40.0" prefWidth="82.0" text="Volver">
+                  <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="40.0" prefWidth="82.0" text="Volver">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>

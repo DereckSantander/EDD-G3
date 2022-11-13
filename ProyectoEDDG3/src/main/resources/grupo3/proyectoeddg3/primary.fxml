@@ -56,21 +56,41 @@
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
                      <children>
                         <ImageView fx:id="imvC1" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lblC1" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="182.0" text="Label">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
                      <children>
                         <ImageView fx:id="imvC2" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lblC2" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="182.0" text="Label">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
                      <children>
                         <ImageView fx:id="imvC3" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lblC3" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="182.0" text="Label">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
                      <children>
                         <ImageView fx:id="imvC4" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="lblC4" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="182.0" text="Label">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                </children></HBox>
@@ -95,12 +115,12 @@
                <HBox.margin>
                   <Insets right="25.0" />
                </HBox.margin></TextField>
-            <TextField fx:id="txtFecha" prefHeight="35.0" prefWidth="91.0" promptText="año">
+            <TextField fx:id="txtAño" prefHeight="35.0" prefWidth="91.0" promptText="año">
                <HBox.margin>
                   <Insets right="25.0" />
                </HBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Buscar">
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" prefHeight="35.0" prefWidth="102.0" text="Buscar">
                <HBox.margin>
                   <Insets left="20.0" right="25.0" />
                </HBox.margin>

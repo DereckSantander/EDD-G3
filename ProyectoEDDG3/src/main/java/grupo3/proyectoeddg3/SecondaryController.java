@@ -27,4 +27,16 @@ public class SecondaryController {
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
+    
+    public void initialize(){
+        
+        App.setImage(PrimaryController.j.getTitulo(),App.pathImagesJuegos,imvJuego);
+        lblTituloJuego.setText(PrimaryController.j.getTitulo());
+        lblDesarrolladores.setText(PrimaryController.j.getDesarrolladores());
+        lblFechaLanz.setText(PrimaryController.j.getFechaLanzamiento());
+        lblDescripcionJuego.setText(PrimaryController.j.getDescripcion());
+        lblPrecioJuego.setText('$'+String.valueOf(PrimaryController.j.getPrecio()));
+        
+    }    
+    
 }
