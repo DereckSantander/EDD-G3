@@ -51,7 +51,29 @@
                   <Insets right="25.0" />
                </HBox.margin>
             </Button>
-            <HBox fx:id="hbCarrusel" prefHeight="350.0" prefWidth="1050.0" />
+            <HBox fx:id="hbCarrusel" prefHeight="350.0" prefWidth="1050.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
+                     <children>
+                        <ImageView fx:id="imvC1" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
+                     <children>
+                        <ImageView fx:id="imvC2" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
+                     <children>
+                        <ImageView fx:id="imvC3" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="262.5">
+                     <children>
+                        <ImageView fx:id="imvC4" fitHeight="280.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children></HBox>
             <Button fx:id="btnCarrDer" mnemonicParsing="false" text="&gt;">
                <HBox.margin>
                   <Insets left="25.0" />
@@ -61,18 +83,26 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1200.0">
          <children>
-            <Label prefHeight="50.0" text="Géneros:">
+            <Label prefHeight="50.0" prefWidth="191.0" text="Géneros:">
                <font>
                   <Font size="35.0" />
                </font>
                <HBox.margin>
-                  <Insets right="750.0" />
+                  <Insets left="25.0" right="700.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="35.0" prefWidth="160.0" promptText="Busque por título" />
-            <Button mnemonicParsing="false" prefHeight="35.0" text="Buscar">
+            <TextField fx:id="txtTitulo" prefHeight="35.0" prefWidth="160.0" promptText="Busque por título">
                <HBox.margin>
-                  <Insets left="25.0" />
+                  <Insets right="25.0" />
+               </HBox.margin></TextField>
+            <TextField fx:id="txtFecha" prefHeight="35.0" prefWidth="91.0" promptText="año">
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Buscar">
+               <HBox.margin>
+                  <Insets left="20.0" right="25.0" />
                </HBox.margin>
             </Button>
          </children>
