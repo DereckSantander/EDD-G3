@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import grupo3.proyectoeddg3.modelo.Juego;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -96,7 +98,15 @@ public class PrimaryController {
     void CarrDer() {
         
     }
-
+    
+    @FXML
+    private void irAlCarrito(){
+        try {
+                App.setRoot("carrito");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+    }
 
     @FXML
     private void buscar(ActionEvent event) {
@@ -141,5 +151,5 @@ public class PrimaryController {
                 ex.printStackTrace();
             }
     }
-    
+       
 }
