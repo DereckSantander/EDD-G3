@@ -22,61 +22,38 @@ import javafx.scene.image.ImageView;
 public class SearchController{
 
 
-    @FXML
-    private Button btn_buscar;
-    @FXML
-    private ImageView img1;
-    @FXML
-    private Label title1;
-    @FXML
-    private ImageView img2;
-    @FXML
-    private Label title2;
-    @FXML
-    private ImageView img3;
-    @FXML
-    private Label title3;
-    @FXML
-    private ImageView img4;
-    @FXML
-    private Label title4;
-    @FXML
-    private ImageView img5;
-    @FXML
-    private Label title5;
-    @FXML
-    private Label title6;
-    @FXML
-    private ImageView img7;
-    @FXML
-    private Label title7;
-    @FXML
-    private ImageView img8;
-    @FXML
-    private Label title8;
-    @FXML
-    private ImageView img9;
-    @FXML
-    private Label title9;
-    @FXML
-    private ImageView img10;
-    @FXML
-    private Label title10;
-    @FXML
-    private Button btnVolver;
-    @FXML
-    private ImageView img6;
-    @FXML
-    private Label lblResultado;
+    @FXML private Button btn_buscar;
+    @FXML private ImageView img1;
+    @FXML private Label title1;
+    @FXML private ImageView img2;
+    @FXML private Label title2;
+    @FXML private ImageView img3;
+    @FXML private Label title3;
+    @FXML private ImageView img4;
+    @FXML private Label title4;
+    @FXML private ImageView img5;
+    @FXML private Label title5;
+    @FXML private Label title6;
+    @FXML private ImageView img7;
+    @FXML private Label title7;
+    @FXML private ImageView img8;
+    @FXML private Label title8;
+    @FXML private ImageView img9;
+    @FXML private Label title9;
+    @FXML private ImageView img10;
+    @FXML private Label title10;
+    @FXML private Button btnVolver;
+    @FXML private ImageView img6;
+    @FXML private Label lblResultado;
     
     
     public void initialize() {
         
-        if(PrimaryController.busquedaC)
+        if(PrimaryController.busquedaC){
             lblResultado.setText(PrimaryController.categoríaSeleccionada);
-        else
+        }else{
             lblResultado.setText(PrimaryController.busqueda);
-        
+                    }
     }    
 
     @FXML

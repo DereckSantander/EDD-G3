@@ -99,8 +99,8 @@ public class PrimaryController {
 
 
     @FXML
-    private void buscar(ActionEvent event) {
-            
+    private void buscar(ActionEvent event) {  
+            busquedaC=false;
             if(txtAño.getText().length()==0 && txtTitulo.getText().length()==0){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error al intentar la búsqueda");
