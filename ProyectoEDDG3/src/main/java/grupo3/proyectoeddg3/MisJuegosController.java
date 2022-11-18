@@ -19,44 +19,21 @@ import javafx.scene.layout.HBox;
  *
  * @author Dereck Santander
  */
-public class CarritoController{
+public class MisJuegosController{
 
-    @FXML
-    private Button btnCarrDer;
-
-    @FXML
-    private Button btnCarrIzq;
-
-    @FXML
-    private Button btnVolver;
-
-    @FXML
-    private HBox hbCarrusel;
-
-    @FXML
-    private ImageView imvC1;
-
-    @FXML
-    private ImageView imvC2;
-
-    @FXML
-    private ImageView imvC3;
-
-    @FXML
-    private ImageView imvC4;
-
-    @FXML
-    private Label lblC1;
-
-    @FXML
-    private Label lblC2;
-
-    @FXML
-    private Label lblC3;
-
-    @FXML
-    private Label lblC4;
-
+    @FXML private Button btnCarrDer;
+    @FXML private Button btnCarrIzq;
+    @FXML private Button btnVolver;
+    @FXML private HBox hbCarrusel;
+    @FXML private ImageView imvC1;
+    @FXML private ImageView imvC2;
+    @FXML private ImageView imvC3;
+    @FXML private ImageView imvC4;
+    @FXML private Label lblC1;
+    @FXML private Label lblC2;
+    @FXML private Label lblC3;
+    @FXML private Label lblC4;
+    
     @FXML
     void CarrDer() {
 
