@@ -49,13 +49,17 @@ public class PrimaryController {
     
     public static Juego j;
     public static DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("archivos/juegos.txt");
+    public static DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
     public static boolean busquedaC;
     public static String categoríaSeleccionada;
     public static String busqueda;
+    public static int juegoMostrado = 0;
     
     public void initialize(){
         //JUEGOS DESTACADOS
         
+        llenarCarr(juegoMostrado);
+        /*
         App.setImage(listaJuegos.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
         App.setImage(listaJuegos.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
         App.setImage(listaJuegos.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
@@ -65,7 +69,7 @@ public class PrimaryController {
         lblC2.setText(listaJuegos.getIndex(1).getTitulo());
         lblC3.setText(listaJuegos.getIndex(2).getTitulo());
         lblC4.setText(listaJuegos.getIndex(3).getTitulo());
-        
+        */
         lblC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
         lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
         lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
@@ -75,7 +79,6 @@ public class PrimaryController {
         
         
         //JUEGOS CATEGORIAS
-        DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
         App.setImage(listaCategorias.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1);
         App.setImage(listaCategorias.getIndex(1).getTitulo(),App.pathImagesJuegos,imv2);
         App.setImage(listaCategorias.getIndex(2).getTitulo(),App.pathImagesJuegos,imv3);
@@ -96,7 +99,26 @@ public class PrimaryController {
     
     @FXML
     void CarrDer() {
+        llenarCarr(juegoMostrado);
+        PrimaryController.juegoMostrado+=3;
+    }
+    
+    void llenarCarr(int indice){
+        DoubleCircularLL<Juego> juegosMostrados = Juego.juegosCargados(indice);
+        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
+        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
+        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
+        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4);
         
+        lblC1.setText(juegosMostrados.getIndex(0).getTitulo());
+        lblC2.setText(juegosMostrados.getIndex(1).getTitulo());
+        lblC3.setText(juegosMostrados.getIndex(2).getTitulo());
+        lblC4.setText(juegosMostrados.getIndex(3).getTitulo());
+        
+        lblC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
+        lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
+        lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
+        lblC4.setOnMouseClicked(ev ->juegoLabel(lblC4));
     }
     
     @FXML
@@ -151,5 +173,7 @@ public class PrimaryController {
                 ex.printStackTrace();
             }
     }
+    
+    
        
 }

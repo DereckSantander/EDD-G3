@@ -139,5 +139,14 @@ public class Juego {
         
     }
     
+    public static DoubleCircularLL<Juego> juegosCargados(int indice){
+        DoubleCircularLL<Juego> listaCargada = new DoubleCircularLL<>();
+        int tope = indice+3;
+        for(int i = indice;i<=tope;i++){
+            Juego juego = PrimaryController.listaJuegos.getIndex(i);
+            listaCargada.addLast(juego);
+        }
+        return listaCargada;
+    }
         
 }
