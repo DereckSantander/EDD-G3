@@ -99,7 +99,7 @@ public class PrimaryController {
 
 
     @FXML
-    private void buscar(ActionEvent event) {  
+    private void buscar(ActionEvent event) {
             busquedaC=false;
             if(txtAño.getText().length()==0 && txtTitulo.getText().length()==0){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -120,7 +120,7 @@ public class PrimaryController {
     }
     
     public void juegoLabel(Label label){
-        busquedaC=false;
+            busquedaC=false;
         
             j= Juego.buscarPorTitulo(label.getText());
             try {
