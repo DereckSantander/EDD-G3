@@ -65,7 +65,7 @@
                               <Insets top="25.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="lblDescripcionJuego" text="Label">
+                        <Label fx:id="lblDescripcionJuego" text="Label" wrapText="true">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>

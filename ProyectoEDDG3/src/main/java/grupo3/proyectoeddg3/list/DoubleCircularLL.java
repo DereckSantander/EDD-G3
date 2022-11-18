@@ -33,6 +33,8 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         }
     }
     
+    
+    
     private class MyIterator<E> implements Iterator<E>{
         Nodo<E> i;
         int contador = 0;
@@ -49,7 +51,7 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         
         public boolean hasNext(){
             contador++;
-            return (i!=null && contador<=4);
+            return (i!=null && contador<=longitud);
         }
     }
     
@@ -201,14 +203,18 @@ public class DoubleCircularLL<E> implements Iterable<E>{
     }
     
     public E getIndex(int index){
-        if(index<=longitud-1 && index>=0){
+        if(index>=0){
             Nodo i = first;
             for(int j=0;j<index;j++){
                 i = i.sig;
             }
             return (E)i.contenido;  
         }else{
-            return null;
+            Nodo i = first;
+            for(int j=0;j<(index*-1);j--){
+                i = i.ant;
+            }
+            return (E)i.contenido; 
         }
     }
     

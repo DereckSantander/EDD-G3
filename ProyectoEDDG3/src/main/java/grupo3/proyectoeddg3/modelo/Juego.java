@@ -101,9 +101,11 @@ public class Juego {
     public static Juego buscarPorTitulo(String titulo){
         
         Juego j=null;
+        System.out.println(PrimaryController.listaJuegos.largo());
         for(Juego a: PrimaryController.listaJuegos){
-            if(a.getTitulo().equals(titulo))
+            if(a.getTitulo().equals(titulo)){
                 j=a;
+            }
         }
         
         return j;

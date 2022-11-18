@@ -69,12 +69,12 @@ public class PrimaryController {
         lblC2.setText(listaJuegos.getIndex(1).getTitulo());
         lblC3.setText(listaJuegos.getIndex(2).getTitulo());
         lblC4.setText(listaJuegos.getIndex(3).getTitulo());
-        */
+        
         lblC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
         lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
         lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
         lblC4.setOnMouseClicked(ev ->juegoLabel(lblC4));
-        
+        */
       
         
         
@@ -100,8 +100,25 @@ public class PrimaryController {
     @FXML
     void CarrDer() {
         llenarCarr(juegoMostrado);
-        PrimaryController.juegoMostrado+=3;
+        PrimaryController.juegoMostrado+=4;
+        try {
+            App.setRoot("primary");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
+    
+    @FXML
+    void CarrIzq() {
+        llenarCarr(juegoMostrado);
+        PrimaryController.juegoMostrado-=4;
+        try {
+            App.setRoot("primary");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     
     void llenarCarr(int indice){
         DoubleCircularLL<Juego> juegosMostrados = Juego.juegosCargados(indice);
@@ -122,9 +139,9 @@ public class PrimaryController {
     }
     
     @FXML
-    private void irAlCarrito(){
+    private void misJuegos(){
         try {
-                App.setRoot("carrito");
+                App.setRoot("misjuegos");
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
