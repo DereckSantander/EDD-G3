@@ -38,10 +38,10 @@ public class MisJuegosController{
     @FXML private Label lblC4;
     
     public void initialize() {
-        llenarCarr(juegoMostrado);
+        //llenarCarr(juegoMostrado);
     }  
 
-    @FXML
+    /*@FXML
     void CarrDer() {
         llenarCarr(juegoMostrado);
         PrimaryController.juegoMostrado+=4;
@@ -82,7 +82,7 @@ public class MisJuegosController{
         lblC4.setOnMouseClicked(ev ->PrimaryController.juegoLabel(lblC4));
     }
     
-
+*/
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
