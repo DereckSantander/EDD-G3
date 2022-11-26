@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.PrimaryController">
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.PrimaryController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -33,7 +33,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button id="ButtonCarrito" fx:id="btnCarrito" mnemonicParsing="false" prefHeight="48.0" prefWidth="72.0" text="Carrito">
+                  <Button id="ButtonCarrito" fx:id="btnCarrito" mnemonicParsing="false" onAction="#irACarrito" prefHeight="48.0" prefWidth="72.0" text="Carrito">
                      <HBox.margin>
                         <Insets right="25.0" />
                      </HBox.margin>

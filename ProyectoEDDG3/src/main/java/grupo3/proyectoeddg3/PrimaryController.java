@@ -146,6 +146,15 @@ public class PrimaryController {
                     ex.printStackTrace();
                 }
     }
+    
+    @FXML
+    void irACarrito() {
+        try {
+                App.setRoot("carrito");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+    }
 
     @FXML
     private void buscar(ActionEvent event) {
