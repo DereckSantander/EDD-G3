@@ -147,6 +147,13 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         return true;
     }
     
+    public boolean addAll(DoubleCircularLL<E> l){
+        for (E e:l){
+            this.addLast(e);
+        }
+        return true;
+    }
+    
     public boolean removeFirst(){
         if(longitud>1){
             first.sig.ant = null;
@@ -211,11 +218,15 @@ public class DoubleCircularLL<E> implements Iterable<E>{
             return (E)i.contenido;  
         }else{
             Nodo i = first;
-            for(int j=0;j<(index*-1);j--){
+            for(int j=0;j<(index*-1);j++){
                 i = i.ant;
             }
             return (E)i.contenido; 
         }
+    }
+    
+    public void clear(){
+        first=last=null;
     }
     
     public void visualizar(){

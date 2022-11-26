@@ -4,6 +4,10 @@
  */
 package grupo3.proyectoeddg3;
 
+import static grupo3.proyectoeddg3.PrimaryController.juegoMostrado;
+import static grupo3.proyectoeddg3.PrimaryController.listaCategorias;
+import grupo3.proyectoeddg3.list.DoubleCircularLL;
+import grupo3.proyectoeddg3.modelo.Juego;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +23,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Dereck Santander
  */
-public class CarritoController implements Initializable {
+public class CarritoController {
 
     @FXML
     private Button btnVolver;
@@ -52,17 +56,19 @@ public class CarritoController implements Initializable {
     @FXML
     private Button btnComprar;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize() {
+    
     }    
 
     @FXML
     private void switchToPrimary(ActionEvent event) throws IOException {
         App.setRoot("primary");
+    }
+
+    @FXML
+    private void comprar(ActionEvent event) {
+        PrimaryController.misJuegos.addAll(PrimaryController.carrito);
+        PrimaryController.misJuegos.clear();
     }
     
 }

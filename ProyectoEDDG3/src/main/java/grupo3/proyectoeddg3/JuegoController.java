@@ -1,13 +1,14 @@
 package grupo3.proyectoeddg3;
 
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class SecondaryController {
+public class JuegoController {
     
     @FXML
     private Button btnComprar;
@@ -94,5 +95,10 @@ public class SecondaryController {
         lblGeneroJuego.setText("Género: "+PrimaryController.j.getGenero());
         
     }    
+
+    @FXML
+    private void comprar(ActionEvent event) {
+        PrimaryController.carrito.addLast(PrimaryController.j);
+    }
     
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.SecondaryController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
    <children>
       <HBox prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -97,7 +97,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="269.0" prefWidth="400.0">
                      <children>
-                        <Button fx:id="btnComprar" mnemonicParsing="false" prefHeight="56.0" prefWidth="142.0" text="Añadir al carrito">
+                        <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#comprar" prefHeight="56.0" prefWidth="142.0" text="Añadir al carrito">
                            <font>
                               <Font size="14.0" />
                            </font>

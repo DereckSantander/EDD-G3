@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.CarritoController">
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.CarritoController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -178,7 +178,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="btnComprar" mnemonicParsing="false" prefHeight="58.0" prefWidth="141.0" text="Comprar">
+                  <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#comprar" prefHeight="58.0" prefWidth="141.0" text="Comprar">
                      <font>
                         <Font size="24.0" />
                      </font>

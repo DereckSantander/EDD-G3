@@ -50,6 +50,8 @@ public class PrimaryController {
     public static Juego j;
     public static DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("archivos/juegos.txt");
     public static DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
+    public static DoubleCircularLL<Juego> misJuegos= new DoubleCircularLL();
+    public static DoubleCircularLL<Juego> carrito= new DoubleCircularLL();
     public static boolean busquedaC;
     public static String categoríaSeleccionada;
     public static String busqueda;
@@ -59,24 +61,7 @@ public class PrimaryController {
         //JUEGOS DESTACADOS
         
         llenarCarr(juegoMostrado);
-        /*
-        App.setImage(listaJuegos.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
-        App.setImage(listaJuegos.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
-        App.setImage(listaJuegos.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
-        App.setImage(listaJuegos.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4);
-        
-        lblC1.setText(listaJuegos.getIndex(0).getTitulo());
-        lblC2.setText(listaJuegos.getIndex(1).getTitulo());
-        lblC3.setText(listaJuegos.getIndex(2).getTitulo());
-        lblC4.setText(listaJuegos.getIndex(3).getTitulo());
-        
-        lblC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
-        lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
-        lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
-        lblC4.setOnMouseClicked(ev ->juegoLabel(lblC4));
-        */
-      
-        
+               
         
         //JUEGOS CATEGORIAS
         App.setImage(listaCategorias.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1);
@@ -177,7 +162,7 @@ public class PrimaryController {
             
     }
     
-    public void juegoLabel(Label label){
+    public static void juegoLabel(Label label){
             busquedaC=false;
         
             j= Juego.buscarPorTitulo(label.getText());
