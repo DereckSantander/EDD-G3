@@ -255,4 +255,14 @@ public class DoubleCircularLL<E> implements Iterable<E>{
             System.out.println("Lista vacia");
         }
     }
+    
+    public boolean contains(E e){
+        boolean ok = false;
+        for(E a:this){
+            if(a.equals(e)){
+                ok = true;
+            }
+        }
+        return ok;
+    }
 }

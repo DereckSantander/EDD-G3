@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
    <children>
       <HBox prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -107,7 +107,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="400.0">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>
@@ -120,6 +120,11 @@
                               <ComboBox fx:id="cmbOrdenFeedback" prefHeight="35.0" prefWidth="198.0" />
                            </children>
                         </HBox>
+                        <Button mnemonicParsing="false" onAction="#filtrarFeedback" prefHeight="42.0" prefWidth="79.0" text="Filtrar">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
                      </children>
                   </VBox>
                   <HBox prefHeight="269.0" prefWidth="801.0">
@@ -131,45 +136,54 @@
                                  <children>
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
-                                          <Label fx:id="lblUsuario1" prefHeight="32.0" prefWidth="79.0" text="Label" />
+                                          <Label fx:id="lblUsuario1" prefHeight="32.0" prefWidth="200.0" text="Label" />
                                           <Label fx:id="lblValoracion1" prefHeight="33.0" prefWidth="58.0" text="Label">
                                              <HBox.margin>
-                                                <Insets left="450.0" />
+                                                <Insets left="325.0" />
                                              </HBox.margin>
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="lblTexto1" text="Label" wrapText="true" />
+                                    <Label fx:id="lblTexto1" text="Label" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin></Label>
                                  </children>
                               </VBox>
                               <VBox prefHeight="90.0" prefWidth="100.0">
                                  <children>
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
-                                          <Label fx:id="lblUsuario2" prefHeight="32.0" prefWidth="79.0" text="Label" />
+                                          <Label fx:id="lblUsuario2" prefHeight="32.0" prefWidth="200.0" text="Label" />
                                           <Label fx:id="lblValoracion2" prefHeight="33.0" prefWidth="58.0" text="Label">
                                              <HBox.margin>
-                                                <Insets left="450.0" />
+                                                <Insets left="325.0" />
                                              </HBox.margin>
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="lblTexto2" text="Label" wrapText="true" />
+                                    <Label fx:id="lblTexto2" text="Label" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin></Label>
                                  </children>
                               </VBox>
                               <VBox prefHeight="90.0" prefWidth="100.0">
                                  <children>
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
-                                          <Label fx:id="lblUsuario3" prefHeight="32.0" prefWidth="79.0" text="Label" />
+                                          <Label fx:id="lblUsuario3" prefHeight="32.0" prefWidth="200.0" text="Label" />
                                           <Label fx:id="lblValoracion3" prefHeight="33.0" prefWidth="58.0" text="Label">
                                              <HBox.margin>
-                                                <Insets left="450.0" />
+                                                <Insets left="325.0" />
                                              </HBox.margin>
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="lblTexto3" text="Label" wrapText="true" />
+                                    <Label fx:id="lblTexto3" text="Label" wrapText="true">
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin></Label>
                                  </children>
                               </VBox>
                            </children>

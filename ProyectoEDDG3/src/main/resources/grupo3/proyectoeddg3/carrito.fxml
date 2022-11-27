@@ -65,7 +65,7 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblSubtotal" text="Label">
+                        <Label fx:id="lblSubtotal">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -79,7 +79,7 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblIVA" text="Label">
+                        <Label fx:id="lblIVA">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -93,7 +93,7 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblTotal" text="Label">
+                        <Label fx:id="lblTotal">
                            <font>
                               <Font size="30.0" />
                            </font>

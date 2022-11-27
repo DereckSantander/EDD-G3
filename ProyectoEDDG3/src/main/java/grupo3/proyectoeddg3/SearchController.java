@@ -28,18 +28,31 @@ import javafx.scene.layout.VBox;
  */
 public class SearchController{
 
+    @FXML
+    private Button btnBusqDer;
 
+    @FXML
+    private Button btnBusqIzq;
+    
     @FXML private Button btn_buscar;
     @FXML private Button btnVolver;
     @FXML private Label lblResultado;
-    @FXML private FlowPane resultadosPane;    
+    @FXML private FlowPane resultadosPane;  
+    
+    public static int busquedaMostrada= 0;
     public void initialize() {
+        PrimaryController.desdeBusqueda = true;
         
         if(PrimaryController.busquedaC){
             lblResultado.setText(PrimaryController.categoríaSeleccionada);
         }else{
             lblResultado.setText(PrimaryController.busqueda);
             }
+        
+        if(PrimaryController.juegosEncontrados.largo()<=14){
+            btnBusqDer.setDisable(true);
+            btnBusqIzq.setDisable(true);
+        }
         
         llenarResultados();
     }    
@@ -49,14 +62,37 @@ public class SearchController{
         App.setRoot("primary");
     }
     
+    @FXML
+    void busqDer(ActionEvent event) {
+        busquedaMostrada+=14;
+        try {
+            App.setRoot("search");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    void busqIzq(ActionEvent event) {
+        busquedaMostrada-=14;
+        try {
+            App.setRoot("search");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     void llenarResultados(){
         
-        for(Juego j:PrimaryController.juegosEncontrados){
+        for(Juego j:Juego.busquedaCargada(busquedaMostrada)){
                VBox vbox=new VBox();
+               vbox.setAlignment(Pos.CENTER);
                ImageView ivJuego=new ImageView();
                App.setImage(j.getTitulo(),App.pathImagesJuegos,ivJuego,137,192,".jpg");
                Label lbl=new Label(j.getTitulo());
-               vbox.setAlignment(Pos.CENTER);
+               lbl.setMaxWidth(137);
+               lbl.setAlignment(Pos.CENTER);
+               
                
                vbox.setMargin(ivJuego,new Insets(0,10,0,10));
                vbox.setMargin(lbl,new Insets(5,10,0,10));

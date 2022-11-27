@@ -61,17 +61,18 @@ public class PrimaryController {
     public static int juegoMostrado = 0;
     public static int categoriaMostrada = 0;
     
+    public static boolean desdeBusqueda = false;
+    public static boolean desdeMisJuegos = false;
+    
     public void initialize(){
-        //JUEGOS DESTACADOS
-        
+        desdeBusqueda = false;
+        desdeMisJuegos = false;
         llenarCarr(juegoMostrado);
         llenarCategoria(categoriaMostrada);
         btnCarrito.setText("Carrito ("+carrito.largo()+")");
         if(carrito.largo()==0){
             btnCarrito.setDisable(true);
         }
-        //JUEGOS CATEGORIAS
-        
         
     }
     
@@ -200,6 +201,8 @@ public class PrimaryController {
             busquedaC=false;
         
             j= Juego.buscarPorTitulo(label.getText());
+            JuegoController.lista = JuegoController.feedbackJuego();
+            JuegoController.textoCmbFiltro = "";
             try {
                 App.setRoot("juego");
             } catch (IOException ex) {

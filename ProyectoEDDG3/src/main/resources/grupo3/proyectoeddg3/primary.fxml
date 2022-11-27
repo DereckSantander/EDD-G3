@@ -25,7 +25,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="400.0">
                <children>
-                  <Button fx:id="btnTusJuegos" mnemonicParsing="false" onAction="#misJuegos" prefHeight="48.0" text="Tus juegos">
+                  <Button fx:id="btnTusJuegos" mnemonicParsing="false" onAction="#misJuegos" prefHeight="48.0" text="Mis juegos">
                      <HBox.margin>
                         <Insets right="100.0" />
                      </HBox.margin>

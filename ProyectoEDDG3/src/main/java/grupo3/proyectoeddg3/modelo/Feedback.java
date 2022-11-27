@@ -59,4 +59,11 @@ public class Feedback {
         
         return listaFeedback;
     }
+
+    @Override
+    public String toString() {
+        return "Feedback{" + "valoracion=" + valoracion + ", nombreUsuario=" + nombreUsuario + '}';
+    }
+    
+    
 }
