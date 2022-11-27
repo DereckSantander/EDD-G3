@@ -153,12 +153,26 @@ public class Juego {
     
     public static DoubleCircularLL<Juego> carritoCargado(int indice){
         DoubleCircularLL<Juego> listaCargada = new DoubleCircularLL<>();
-        int tope = indice+=2;
-        for(int i = indice;i<=tope;i++){
-            Juego juego = PrimaryController.carrito.getIndex(i);
-            listaCargada.addLast(juego);
+        int tope = indice+2;
+        if(PrimaryController.carrito.largo()<3){
+            for(Juego j: PrimaryController.carrito){
+                listaCargada.addLast(j);
+            }
+        }else{
+            for(int i = indice;i<=tope;i++){
+                Juego juego = PrimaryController.carrito.getIndex(i);
+                listaCargada.addLast(juego);
+            }
         }
         return listaCargada;
+    }
+    
+    public static int subtotalCarrito(DoubleCircularLL<Juego> carritoCompras){
+        int suma = 0;
+        for(Juego j:carritoCompras){
+            suma+= j.getPrecio();
+        }
+        return suma;
     }
 
     @Override

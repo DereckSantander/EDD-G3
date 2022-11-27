@@ -51,8 +51,8 @@ public class PrimaryController {
     public static Juego j;
     public static DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("archivos/juegos.txt");
     public static DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
-    public static DoubleCircularLL<Juego> misJuegos= Juego.cargarJuegos("archivos/misjuegos.txt");
-    public static DoubleCircularLL<Juego> carrito= Juego.cargarJuegos("archivos/carrito.txt");
+    public static DoubleCircularLL<Juego> misJuegos = Juego.cargarJuegos("archivos/misjuegos.txt");
+    public static DoubleCircularLL<Juego> carrito = Juego.cargarJuegos("archivos/carrito.txt");
     public static DoubleCircularLL<Juego> juegosEncontrados= new DoubleCircularLL();
     public static DoubleCircularLL<Feedback> listaFeedback = Feedback.cargarFeedback("archivos/FeedbackProyecto.txt");
     public static boolean busquedaC;
@@ -66,7 +66,10 @@ public class PrimaryController {
         
         llenarCarr(juegoMostrado);
         llenarCategoria(categoriaMostrada);
-        
+        btnCarrito.setText("Carrito ("+carrito.largo()+")");
+        if(carrito.largo()==0){
+            btnCarrito.setDisable(true);
+        }
         //JUEGOS CATEGORIAS
         
         
@@ -74,7 +77,7 @@ public class PrimaryController {
     
     @FXML
     void CarrDer() {
-        llenarCarr(juegoMostrado);
+        //llenarCarr(juegoMostrado);
         PrimaryController.juegoMostrado+=4;
         try {
             App.setRoot("primary");
@@ -85,7 +88,7 @@ public class PrimaryController {
     
     @FXML
     void CarrIzq() {
-        llenarCarr(juegoMostrado);
+        //llenarCarr(juegoMostrado);
         PrimaryController.juegoMostrado-=4;
         try {
             App.setRoot("primary");

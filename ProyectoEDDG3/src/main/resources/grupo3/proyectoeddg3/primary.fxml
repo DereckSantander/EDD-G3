@@ -33,7 +33,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button id="ButtonCarrito" fx:id="btnCarrito" mnemonicParsing="false" onAction="#irACarrito" prefHeight="48.0" prefWidth="72.0" text="Carrito">
+                  <Button id="ButtonCarrito" fx:id="btnCarrito" mnemonicParsing="false" onAction="#irACarrito" prefHeight="48.0" prefWidth="119.0" text="Carrito">
                      <HBox.margin>
                         <Insets right="25.0" />
                      </HBox.margin>

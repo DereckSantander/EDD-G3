@@ -52,26 +52,54 @@ public class CarritoController {
     private Button btnComprar;
     
     public static int carritoMostrado=0;
+    
     @FXML private TextFlow carritoPane;
     
     public void initialize() {
-        PrimaryController.carrito.visualizar();
-        llenarCarrito();
-        //Juego.carritoCargado(carritoMostrado).visualizar();
+        
+        if(PrimaryController.carrito.largo()!=0){
+            llenarCarrito();
+            int subtotal = Juego.subtotalCarrito(PrimaryController.carrito);
+            lblSubtotal.setText(String.valueOf(subtotal));
+            double impuestos = (subtotal * 0.12);
+            String impuestoMostrado = String.format("%.2f", impuestos);
+            lblIVA.setText(impuestoMostrado);
+            lblTotal.setText(String.valueOf(subtotal+impuestos));
+        }
     }    
 
     @FXML
     private void switchToPrimary(ActionEvent event) throws IOException {
         App.setRoot("primary");
     }
+    @FXML
+    void carritoAbajo(ActionEvent event) {
+        carritoMostrado+=3;
+        try {
+            App.setRoot("carrito");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    void carritoArriba(ActionEvent event) {
+        carritoMostrado-=3;
+        try {
+            App.setRoot("carrito");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     @FXML
     private void comprar(ActionEvent event) {
-        PrimaryController.misJuegos.addAll(PrimaryController.carrito);
+        //PrimaryController.misJuegos.addAll(PrimaryController.carrito);
         try ( BufferedWriter writer = new BufferedWriter(new FileWriter("archivos/misjuegos.txt",true))) {
-            writer.write(PrimaryController.j.toString());
-            writer.newLine();
-            writer.close();
+            for(Juego jc:PrimaryController.carrito){
+                writer.write(jc.toString());
+                writer.newLine();
+            }
             System.out.println("GUARDADO EXITOSO");
             } catch (Exception e) {
                 System.out.println("no se pudo agregar");
@@ -79,12 +107,25 @@ public class CarritoController {
             }
         
         try ( BufferedWriter writer = new BufferedWriter(new FileWriter("archivos/carrito.txt",false))) {
-            writer.write("");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Compra confirmada");
+        alert.setHeaderText(null);
+        alert.setContentText("Has realizado correctamente tu compra. Gracias!");
+        PrimaryController.misJuegos = Juego.cargarJuegos("archivos/misjuegos.txt");
         PrimaryController.carrito=new DoubleCircularLL();
+        alert.showAndWait();
+        try {
+            App.setRoot("primary");
+            
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        
     }
     
     void llenarCarrito(){
@@ -112,7 +153,7 @@ public class CarritoController {
                 
                 carritoPane.getChildren().addAll(hbox);
                 
-                /*lblTitulo.setOnMouseClicked(ev ->{
+                lblTitulo.setOnMouseClicked(ev ->{
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmar eliminar juego");
                 alert.setHeaderText(null);
@@ -120,7 +161,6 @@ public class CarritoController {
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.get() == ButtonType.OK) {
                     PrimaryController.carrito.remove(j);
-                    
                     try ( BufferedWriter writer = new BufferedWriter(new FileWriter("archivos/carrito.txt",false))) {
                         for(Juego j1: PrimaryController.carrito){
                             writer.write(j1.toString());
@@ -131,9 +171,14 @@ public class CarritoController {
                         System.out.println("no se pudo agregar");
                         e.printStackTrace();
                     }
-                */
-           }
-        
+                }
+                try {
+                    App.setRoot("carrito");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                });
+        }
     }
     
 }
