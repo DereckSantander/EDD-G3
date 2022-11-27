@@ -19,6 +19,7 @@ public class App extends Application {
 
     private static Scene scene;
     public static String pathImagesJuegos = "archivos/ImagesJuegos/";
+    public static String pathCapturasJuegos = "archivos/CapturasJuegos/";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -40,11 +41,11 @@ public class App extends Application {
         launch();
     }
     
-    public static void setImage(String name,String path,ImageView iView, int ancho, int alto){
+    public static void setImage(String name,String path,ImageView iView, int ancho, int alto,String formato){
         InputStream input = null;
         Image image = null;
         try {
-            input = new FileInputStream(path + name + ".jpg");
+            input = new FileInputStream(path + name + formato);
             image = new Image(input, ancho, alto, false, false);
             iView.setImage(image);
         } catch (Exception ex) {

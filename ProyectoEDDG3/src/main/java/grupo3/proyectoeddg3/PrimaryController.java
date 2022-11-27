@@ -53,6 +53,7 @@ public class PrimaryController {
     public static DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
     public static DoubleCircularLL<Juego> misJuegos= new DoubleCircularLL();
     public static DoubleCircularLL<Juego> carrito= new DoubleCircularLL();
+    public static DoubleCircularLL<Juego> juegosEncontrados= new DoubleCircularLL();
     public static DoubleCircularLL<Feedback> listaFeedback = Feedback.cargarFeedback("archivos/FeedbackProyecto.txt");
     public static boolean busquedaC;
     public static String categoríaSeleccionada;
@@ -118,10 +119,10 @@ public class PrimaryController {
     
     void llenarCarr(int indice){
         DoubleCircularLL<Juego> juegosMostrados = Juego.juegosCargados(indice);
-        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1,200,280);
-        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2,200,280);
-        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3,200,280);
-        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4,200,280);
+        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1,200,280,".jpg");
+        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2,200,280,".jpg");
+        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3,200,280,".jpg");
+        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4,200,280,".jpg");
         
         lblC1.setText(juegosMostrados.getIndex(0).getTitulo());
         lblC2.setText(juegosMostrados.getIndex(1).getTitulo());
@@ -136,10 +137,10 @@ public class PrimaryController {
     
     void llenarCategoria(int indice){
         DoubleCircularLL<Juego> categoriasMostradas = Juego.categoriasCargadas(indice);
-        App.setImage(categoriasMostradas.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1,200,280);
-        App.setImage(categoriasMostradas.getIndex(1).getTitulo(),App.pathImagesJuegos,imv2,200,280);
-        App.setImage(categoriasMostradas.getIndex(2).getTitulo(),App.pathImagesJuegos,imv3,200,280);
-        App.setImage(categoriasMostradas.getIndex(3).getTitulo(),App.pathImagesJuegos,imv4,200,280);
+        App.setImage(categoriasMostradas.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1,200,280,".jpg");
+        App.setImage(categoriasMostradas.getIndex(1).getTitulo(),App.pathImagesJuegos,imv2,200,280,".jpg");
+        App.setImage(categoriasMostradas.getIndex(2).getTitulo(),App.pathImagesJuegos,imv3,200,280,".jpg");
+        App.setImage(categoriasMostradas.getIndex(3).getTitulo(),App.pathImagesJuegos,imv4,200,280,".jpg");
         
         
         lbl1.setText(categoriasMostradas.getIndex(0).getGenero());
@@ -182,7 +183,7 @@ public class PrimaryController {
                 alert.showAndWait();
             } else {
                 System.out.println("Buscando");
-                Juego.juegosEncontrados(txtTitulo.getText(),txtAño.getText());
+                Juego.juegosEncontrados(txtTitulo.getText(),txtAño.getText());   
                 try {
                 App.setRoot("search");
                 } catch (IOException ex) {

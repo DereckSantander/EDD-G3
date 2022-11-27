@@ -20,7 +20,6 @@ public class Juego {
     private String descripcion;
     private float precio;
     
-    public static DoubleCircularLL<Juego> juegosEncontrados;
 
     public String getTitulo() {
         return titulo;
@@ -86,33 +85,50 @@ public class Juego {
         
     }
     
-    public static DoubleCircularLL<Juego> juegosEncontrados(String busqueda, String año){
+    public static void juegosEncontrados(String busqueda, String año){
         
-        juegosEncontrados=null;
+        PrimaryController.juegosEncontrados=new DoubleCircularLL();
         
         if(busqueda.length()!=0 && año.length()!=0){
-            System.out.println("busco por ambos");
+            //System.out.println("busco por ambos");
+            for(Juego j: PrimaryController.listaJuegos){
+                if(j.getTitulo().contains(busqueda) && j.getFechaLanzamiento().equals(año)){
+                    PrimaryController.juegosEncontrados.addLast(j);
+                }
+            }
             PrimaryController.busqueda="Resultados de: '"+ busqueda +"' del año "+año;
         } else if(busqueda.length()!=0 && año.length()==0){
-            System.out.println("busco por titulo");
+            //System.out.println("busco por titulo");
+            for(Juego j: PrimaryController.listaJuegos){
+                if(j.getTitulo().contains(busqueda)){
+                    PrimaryController.juegosEncontrados.addLast(j);
+                }
+            }
             PrimaryController.busqueda="Resultados de: '"+ busqueda +"'";
         } else if(busqueda.length()==0 && año.length()!=0){
-            System.out.println("busco por año");
+            //System.out.println("busco por año");
+            for(Juego j: PrimaryController.listaJuegos){
+                if(j.getFechaLanzamiento().equals(año)){
+                    PrimaryController.juegosEncontrados.addLast(j);
+                }
             PrimaryController.busqueda="Resultados de juegos del año: "+año;
         } 
         
-        return juegosEncontrados;
-        
-    }
+    }}
     
-    public static DoubleCircularLL<Juego> juegosGenero(String genero){
+    public static void juegosGenero(String genero){
         
-        juegosEncontrados=null;
+        PrimaryController.juegosEncontrados=new DoubleCircularLL();
+
         
-        System.out.println("busco por genero");
+        //System.out.println("busco por genero");
         
-        return juegosEncontrados;
-        
+        for(Juego j: PrimaryController.listaJuegos){
+                if(j.getGenero().equals(genero)){
+                    PrimaryController.juegosEncontrados.addLast(j);
+                }
+            }
+   
     }
     
     public static DoubleCircularLL<Juego> juegosCargados(int indice){

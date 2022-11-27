@@ -68,7 +68,7 @@ public class CarritoController {
     @FXML
     private void comprar(ActionEvent event) {
         PrimaryController.misJuegos.addAll(PrimaryController.carrito);
-        PrimaryController.misJuegos.clear();
+        PrimaryController.misJuegos=new DoubleCircularLL();
     }
     
 }

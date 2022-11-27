@@ -92,7 +92,7 @@ public class JuegoController {
     
     
     public void initialize(){
-        App.setImage(PrimaryController.j.getTitulo(),App.pathImagesJuegos,imvJuego,200,280);
+        App.setImage(PrimaryController.j.getTitulo(),App.pathImagesJuegos,imvJuego,200,280,".jpg");
         lblTituloJuego.setText(PrimaryController.j.getTitulo());
         lblDesarrolladores.setText("Desarrollado por: " + PrimaryController.j.getDesarrolladores());
         lblFechaLanz.setText("Año: "+PrimaryController.j.getFechaLanzamiento());
@@ -109,6 +109,9 @@ public class JuegoController {
         
         llenarFeedback(feedbackMostrado);
         
+        App.setImage("1",App.pathCapturasJuegos+PrimaryController.j.getTitulo()+"/",imvJuego1,320,180,".jpeg");
+        App.setImage("2",App.pathCapturasJuegos+PrimaryController.j.getTitulo()+"/",imvJuego2,320,180,".jpeg");
+
     }    
 
     @FXML
@@ -174,5 +177,7 @@ public class JuegoController {
         }
         return listaCargada;
     }
+    
+    
     
 }
