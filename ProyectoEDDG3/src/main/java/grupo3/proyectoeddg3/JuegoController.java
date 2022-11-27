@@ -121,6 +121,7 @@ public class JuegoController {
     
     @FXML
     void fbAbajo(ActionEvent event) {
+        System.out.println("a");
         llenarFeedback(feedbackMostrado);
         feedbackMostrado+=3;
         try {
@@ -132,6 +133,7 @@ public class JuegoController {
 
     @FXML
     void fbArriba(ActionEvent event) {
+        System.out.println("a");
         llenarFeedback(feedbackMostrado);
         feedbackMostrado-=3;
         try {

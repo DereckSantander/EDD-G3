@@ -176,8 +176,8 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0">
                            <children>
-                              <Button fx:id="btnValoracionArriba" mnemonicParsing="false" text="^" />
-                              <Button fx:id="btnValoracionAbajo" mnemonicParsing="false" text="v" />
+                              <Button fx:id="btnValoracionArriba" mnemonicParsing="false" onAction="#fbArriba" text="^" />
+                              <Button fx:id="btnValoracionAbajo" mnemonicParsing="false" onAction="#fbAbajo" text="v" />
                            </children>
                         </VBox>
                      </children>
