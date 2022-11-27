@@ -190,8 +190,8 @@
                   <Insets left="25.0" />
                </HBox.margin>
                <children>
-                  <Button fx:id="btnGenUp" mnemonicParsing="false" text="^" />
-                  <Button fx:id="btnGenDown" mnemonicParsing="false" text="v">
+                  <Button fx:id="btnGenUp" mnemonicParsing="false" onAction="#catArriba" text="^" />
+                  <Button fx:id="btnGenDown" mnemonicParsing="false" onAction="#catAbajo" text="v">
                      <VBox.margin>
                         <Insets top="100.0" />
                      </VBox.margin>

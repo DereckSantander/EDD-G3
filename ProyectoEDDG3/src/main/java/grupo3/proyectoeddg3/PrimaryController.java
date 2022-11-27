@@ -4,6 +4,7 @@ package grupo3.proyectoeddg3;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
+import grupo3.proyectoeddg3.modelo.Feedback;
 import grupo3.proyectoeddg3.modelo.Juego;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,33 +53,21 @@ public class PrimaryController {
     public static DoubleCircularLL<Juego> listaCategorias = Juego.cargarJuegos("archivos/categorias.txt");
     public static DoubleCircularLL<Juego> misJuegos= new DoubleCircularLL();
     public static DoubleCircularLL<Juego> carrito= new DoubleCircularLL();
+    public static DoubleCircularLL<Feedback> listaFeedback = Feedback.cargarFeedback("archivos/FeedbackProyecto.txt");
     public static boolean busquedaC;
     public static String categoríaSeleccionada;
     public static String busqueda;
     public static int juegoMostrado = 0;
+    public static int categoriaMostrada = 0;
     
     public void initialize(){
         //JUEGOS DESTACADOS
         
         llenarCarr(juegoMostrado);
-               
+        llenarCategoria(categoriaMostrada);
         
         //JUEGOS CATEGORIAS
-        App.setImage(listaCategorias.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1);
-        App.setImage(listaCategorias.getIndex(1).getTitulo(),App.pathImagesJuegos,imv2);
-        App.setImage(listaCategorias.getIndex(2).getTitulo(),App.pathImagesJuegos,imv3);
-        App.setImage(listaCategorias.getIndex(3).getTitulo(),App.pathImagesJuegos,imv4);
         
-        
-        lbl1.setText(listaCategorias.getIndex(0).getGenero());
-        lbl2.setText(listaCategorias.getIndex(1).getGenero());
-        lbl3.setText(listaCategorias.getIndex(2).getGenero());
-        lbl4.setText(listaCategorias.getIndex(3).getGenero());
-        
-        lbl1.setOnMouseClicked(ev ->categoriaLabel(lbl1));
-        lbl2.setOnMouseClicked(ev ->categoriaLabel(lbl2));
-        lbl3.setOnMouseClicked(ev ->categoriaLabel(lbl3));
-        lbl4.setOnMouseClicked(ev ->categoriaLabel(lbl4));
         
     }
     
@@ -104,13 +93,35 @@ public class PrimaryController {
         }
     }
     
+    @FXML
+    void catAbajo(ActionEvent event) {
+        llenarCategoria(categoriaMostrada);
+        PrimaryController.categoriaMostrada+=4;
+        try {
+            App.setRoot("primary");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+
+    @FXML
+    void catArriba(ActionEvent event) {
+        llenarCategoria(categoriaMostrada);
+        PrimaryController.categoriaMostrada-=4;
+        try {
+            App.setRoot("primary");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
     
     void llenarCarr(int indice){
         DoubleCircularLL<Juego> juegosMostrados = Juego.juegosCargados(indice);
-        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
-        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
-        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
-        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4);
+        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1,200,280);
+        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2,200,280);
+        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3,200,280);
+        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4,200,280);
         
         lblC1.setText(juegosMostrados.getIndex(0).getTitulo());
         lblC2.setText(juegosMostrados.getIndex(1).getTitulo());
@@ -121,6 +132,25 @@ public class PrimaryController {
         lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
         lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
         lblC4.setOnMouseClicked(ev ->juegoLabel(lblC4));
+    }
+    
+    void llenarCategoria(int indice){
+        DoubleCircularLL<Juego> categoriasMostradas = Juego.categoriasCargadas(indice);
+        App.setImage(categoriasMostradas.getIndex(0).getTitulo(),App.pathImagesJuegos,imv1,200,280);
+        App.setImage(categoriasMostradas.getIndex(1).getTitulo(),App.pathImagesJuegos,imv2,200,280);
+        App.setImage(categoriasMostradas.getIndex(2).getTitulo(),App.pathImagesJuegos,imv3,200,280);
+        App.setImage(categoriasMostradas.getIndex(3).getTitulo(),App.pathImagesJuegos,imv4,200,280);
+        
+        
+        lbl1.setText(categoriasMostradas.getIndex(0).getGenero());
+        lbl2.setText(categoriasMostradas.getIndex(1).getGenero());
+        lbl3.setText(categoriasMostradas.getIndex(2).getGenero());
+        lbl4.setText(categoriasMostradas.getIndex(3).getGenero());
+        
+        lbl1.setOnMouseClicked(ev ->categoriaLabel(lbl1));
+        lbl2.setOnMouseClicked(ev ->categoriaLabel(lbl2));
+        lbl3.setOnMouseClicked(ev ->categoriaLabel(lbl3));
+        lbl4.setOnMouseClicked(ev ->categoriaLabel(lbl4));
     }
     
     @FXML
@@ -184,7 +214,5 @@ public class PrimaryController {
                 ex.printStackTrace();
             }
     }
-    
-    
-       
+      
 }

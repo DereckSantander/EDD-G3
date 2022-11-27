@@ -40,12 +40,12 @@ public class App extends Application {
         launch();
     }
     
-    public static void setImage(String name,String path,ImageView iView){
+    public static void setImage(String name,String path,ImageView iView, int ancho, int alto){
         InputStream input = null;
         Image image = null;
         try {
             input = new FileInputStream(path + name + ".jpg");
-            image = new Image(input, 100, 100, false, false);
+            image = new Image(input, ancho, alto, false, false);
             iView.setImage(image);
         } catch (Exception ex) {
             System.out.println("No se pudo cargar imagen");

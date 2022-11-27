@@ -19,7 +19,6 @@ public class Juego {
     private String fechaLanzamiento;
     private String descripcion;
     private float precio;
-    private DoubleCircularLL<Feedback> listaFeedback;
     
     public static DoubleCircularLL<Juego> juegosEncontrados;
 
@@ -47,13 +46,6 @@ public class Juego {
         return precio;
     }
 
-    public DoubleCircularLL<Feedback> getListaFeedback() {
-        return listaFeedback;
-    }
-    
-    
-    
-
     public Juego(String titulo, String genero, String desarrolladores, String fechaLanzamiento, String descripcion, float precio) {
         this.titulo = titulo;
         this.genero = genero;
@@ -78,24 +70,6 @@ public class Juego {
             e.printStackTrace();
         } 
         return listaJuegos;
-    }
-    
-    public void cargarFeedback(String ruta){
-        try(BufferedReader br=new BufferedReader(new FileReader(ruta)))
-         {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] datos = line.split(";");
-                if(datos[4].equals(this.titulo)){
-                   Feedback j = new Feedback(Integer.parseInt(datos[0]), datos[1], datos[2], datos[3], datos[4]);
-                   this.listaFeedback.addLast(j);
-                }
-                
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } 
     }
     
     public static Juego buscarPorTitulo(String titulo){
@@ -146,6 +120,16 @@ public class Juego {
         int tope = indice+3;
         for(int i = indice;i<=tope;i++){
             Juego juego = PrimaryController.listaJuegos.getIndex(i);
+            listaCargada.addLast(juego);
+        }
+        return listaCargada;
+    }
+    
+    public static DoubleCircularLL<Juego> categoriasCargadas(int indice){
+        DoubleCircularLL<Juego> listaCargada = new DoubleCircularLL<>();
+        int tope = indice+3;
+        for(int i = indice;i<=tope;i++){
+            Juego juego = PrimaryController.listaCategorias.getIndex(i);
             listaCargada.addLast(juego);
         }
         return listaCargada;

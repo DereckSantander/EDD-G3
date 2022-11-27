@@ -6,3 +6,4 @@ God of War Ragnarok;Acción;Santa Monica Studio;2022;Kratos ha dejado atrás su 
 Fifa 22;Deportes;EA Sports;2021;FIFA 22 acorta las distancias aún más con lo que sucede en la vida real gracias a los avances en la jugabilidad básica y a nuevas características innovadoras en todos los modos.;60.00
 Fortnite;Free To Play;Epic Games;2017;Fortnite es un Battle Royale gratuito con muchísimos modos de juego para todo tipo de jugadores. Asiste a un concierto, construye una isla o pelea.;00.00
 New Super Mario Bros;Plataforma;Nintendo;2006;¡Únete a Mario, Luigi y a sus amigos en cualquier momento y en cualquier lugar en una divertida aventura para uno o varios jugadores! Disfruta de dos aventuras de desplazamiento lateral con hasta tres amigos e intenta salvar al Reino Champiñón.;10.00
+Tomb Raider;Aventura;Square Enix;2013;Tomb Raider explora la intensa historia del origen de Lara Croft y su evolución desde una joven mujer a una sobreviviente a prueba de balas.;8.00
