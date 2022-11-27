@@ -3,6 +3,8 @@ package grupo3.proyectoeddg3;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import grupo3.proyectoeddg3.modelo.Feedback;
 import grupo3.proyectoeddg3.PrimaryController;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -116,7 +118,17 @@ public class JuegoController {
 
     @FXML
     private void comprar(ActionEvent event) {
+        System.out.println("1");
         PrimaryController.carrito.addLast(PrimaryController.j);
+        try ( BufferedWriter writer = new BufferedWriter(new FileWriter("archivos/carrito.txt",true))) {
+            writer.write(PrimaryController.j.toString());
+            writer.newLine();
+            writer.close();
+            System.out.println("GUARDADO EXITOSO");
+            } catch (Exception e) {
+                System.out.println("no se pudo agregar");
+                e.printStackTrace();
+            }
     }
     
     @FXML

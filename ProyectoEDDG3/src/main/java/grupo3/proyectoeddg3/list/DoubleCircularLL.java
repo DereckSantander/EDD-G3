@@ -201,6 +201,16 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         return true;
     }
     
+    public boolean remove(E e){
+        
+        for(int a=0; a<this.longitud;a++){
+            if (this.getIndex(a).equals(e)){
+                this.remove(a);
+            }    
+        }
+        return true;
+    }
+    
     public E getFirst(){
         return first.contenido;
     }
@@ -233,13 +243,13 @@ public class DoubleCircularLL<E> implements Iterable<E>{
         Nodo i = this.first;
         if(i!=null){
             i.ant.mostrarContenido();
-            System.out.print("<- ");
+            System.out.println("<- ");
             for(int j = 0;j<longitud-1;j++){
                 i.mostrarContenido();
                 i = i.sig;
             }
             i.mostrarContenido();
-            System.out.print("-> ");
+            System.out.println("-> ");
             i.sig.mostrarContenido();
         }else{
             System.out.println("Lista vacia");

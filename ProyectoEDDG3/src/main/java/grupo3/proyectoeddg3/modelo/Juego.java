@@ -150,5 +150,22 @@ public class Juego {
         }
         return listaCargada;
     }
-        
+    
+    public static DoubleCircularLL<Juego> carritoCargado(int indice){
+        DoubleCircularLL<Juego> listaCargada = new DoubleCircularLL<>();
+        int tope = indice+=2;
+        for(int i = indice;i<=tope;i++){
+            Juego juego = PrimaryController.carrito.getIndex(i);
+            listaCargada.addLast(juego);
+        }
+        return listaCargada;
+    }
+
+    @Override
+    public String toString() {
+        return titulo + ";" + genero + ";" + desarrolladores + ";" + fechaLanzamiento + ";" + descripcion + ";" + precio;
+    }
+    
+    
+    
 }

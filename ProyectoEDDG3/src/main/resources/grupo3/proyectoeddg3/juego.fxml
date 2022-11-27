@@ -102,7 +102,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="269.0" prefWidth="400.0">
                      <children>
-                        <Button fx:id="btnComprar" mnemonicParsing="false" prefHeight="56.0" prefWidth="142.0" text="Añadir al carrito">
+                        <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#comprar" prefHeight="56.0" prefWidth="142.0" text="Añadir al carrito">
                            <font>
                               <Font size="14.0" />
                            </font>
