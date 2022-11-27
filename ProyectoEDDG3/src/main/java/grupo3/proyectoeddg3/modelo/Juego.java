@@ -116,7 +116,7 @@ public class Juego {
         } else if(busqueda.length()!=0 && año.length()==0){
             //System.out.println("busco por titulo");
             for(Juego j: PrimaryController.listaJuegos){
-                if(busqueda.length()==1){
+                if(busqueda.length()!=1){
                     if(j.getTitulo().toLowerCase().contains(busqueda.toLowerCase())){
                         PrimaryController.juegosEncontrados.addLast(j);
                     }
