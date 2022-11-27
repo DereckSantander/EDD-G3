@@ -4,6 +4,7 @@
  */
 package grupo3.proyectoeddg3;
 
+import static grupo3.proyectoeddg3.PrimaryController.juegoLabel;
 import static grupo3.proyectoeddg3.PrimaryController.juegoMostrado;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import grupo3.proyectoeddg3.modelo.Juego;
@@ -12,10 +13,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -24,69 +29,38 @@ import javafx.scene.layout.HBox;
  */
 public class MisJuegosController{
 
-    @FXML private Button btnCarrDer;
-    @FXML private Button btnCarrIzq;
     @FXML private Button btnVolver;
-    @FXML private HBox hbCarrusel;
-    @FXML private ImageView imvC1;
-    @FXML private ImageView imvC2;
-    @FXML private ImageView imvC3;
-    @FXML private ImageView imvC4;
-    @FXML private Label lblC1;
-    @FXML private Label lblC2;
-    @FXML private Label lblC3;
-    @FXML private Label lblC4;
+    @FXML private FlowPane juegosPane;
     
     public void initialize() {
-        //llenarCarr(juegoMostrado);
+        llenarJuegos();
     }  
 
-    /*@FXML
-    void CarrDer() {
-        llenarCarr(juegoMostrado);
-        PrimaryController.juegoMostrado+=4;
-        try {
-            App.setRoot("misjuegos");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
     
-    @FXML
-    void CarrIzq() {
-        llenarCarr(juegoMostrado);
-        PrimaryController.juegoMostrado-=4;
-        try {
-            App.setRoot("primary");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
-    
-    void llenarCarr(int indice){
-        DoubleCircularLL<Juego> juegosMostrados = Juego.juegosCargados(indice);
-        App.setImage(juegosMostrados.getIndex(0).getTitulo(),App.pathImagesJuegos,imvC1);
-        App.setImage(juegosMostrados.getIndex(1).getTitulo(),App.pathImagesJuegos,imvC2);
-        App.setImage(juegosMostrados.getIndex(2).getTitulo(),App.pathImagesJuegos,imvC3);
-        App.setImage(juegosMostrados.getIndex(3).getTitulo(),App.pathImagesJuegos,imvC4);
-        
-        lblC1.setText(juegosMostrados.getIndex(0).getTitulo());
-        lblC2.setText(juegosMostrados.getIndex(1).getTitulo());
-        lblC3.setText(juegosMostrados.getIndex(2).getTitulo());
-        lblC4.setText(juegosMostrados.getIndex(3).getTitulo());
-        
-        lblC1.setOnMouseClicked(ev ->PrimaryController.juegoLabel(lblC1));
-        lblC2.setOnMouseClicked(ev ->PrimaryController.juegoLabel(lblC2));
-        lblC3.setOnMouseClicked(ev ->PrimaryController.juegoLabel(lblC3));
-        lblC4.setOnMouseClicked(ev ->PrimaryController.juegoLabel(lblC4));
-    }
-    
-*/
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
       
+    void llenarJuegos(){
+        
+        for(Juego j:PrimaryController.misJuegos){
+               VBox vbox=new VBox();
+               ImageView ivJuego=new ImageView();
+               App.setImage(j.getTitulo(),App.pathImagesJuegos,ivJuego,137,192,".jpg");
+               Label lbl=new Label(j.getTitulo());
+               vbox.setAlignment(Pos.CENTER);
+               
+               vbox.setMargin(ivJuego,new Insets(0,10,0,10));
+               vbox.setMargin(lbl,new Insets(5,10,0,10));
+               
+               vbox.getChildren().addAll(ivJuego,lbl);
+               juegosPane.getChildren().add(vbox);
+               juegosPane.setMargin(vbox,new Insets(0,0,10,0));
+               
+               lbl.setOnMouseClicked(ev ->juegoLabel(lbl));
+           }
+    }
+    
     
 }
