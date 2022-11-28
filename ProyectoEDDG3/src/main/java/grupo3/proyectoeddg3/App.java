@@ -24,6 +24,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 1200, 800);
+        scene.getStylesheets().add(App.class.getResource("estilos/estilo.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
