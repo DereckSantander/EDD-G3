@@ -17,6 +17,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class JuegoController {
     
@@ -89,6 +90,9 @@ public class JuegoController {
     @FXML
     private Label lblValoracion3;
     
+    @FXML
+    private VBox vbFondoJuego;
+    
     public static int feedbackMostrado = 0;
     
     public static DoubleCircularLL<Feedback> lista;
@@ -105,10 +109,13 @@ public class JuegoController {
         }else{
             App.setRoot("search");
         }
+        
     }
     
+        
     
     public void initialize(){
+        vbFondoJuego.setId(PrimaryController.j.getTitulo());
         cmbOrdenFeedback.getItems().addAll("Positivas primero","Negativas primero");
         cmbOrdenFeedback.setValue(textoCmbFiltro);
         

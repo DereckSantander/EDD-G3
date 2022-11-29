@@ -13,12 +13,22 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="400.0" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="400.0">
                <children>
                   <Label text="DMJ">
                      <font>
                         <Font name="Futura Medium" size="65.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </Label>
+               </children></HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <Label text="Catálogo">
+                     <font>
+                        <Font name="Futura Medium" size="40.0" />
                      </font>
                   </Label>
                </children>

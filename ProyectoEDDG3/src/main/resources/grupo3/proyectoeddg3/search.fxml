@@ -23,10 +23,15 @@
                   </Button>
                </children>
             </HBox>
-            <AnchorPane prefHeight="100.0" prefWidth="783.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
                <children>
                   <Button fx:id="btn_buscar" layoutX="655.0" layoutY="34.0" mnemonicParsing="false" prefHeight="35.0" text="Buscar" visible="false" />
                   <TextField layoutX="426.0" layoutY="34.0" visible="false" />
+                  <Label layoutX="126.0" layoutY="3.0" text="DMJ">
+                     <font>
+                        <Font name="Futura Medium" size="65.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

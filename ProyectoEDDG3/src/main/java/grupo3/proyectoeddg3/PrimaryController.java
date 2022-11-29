@@ -187,12 +187,21 @@ public class PrimaryController {
                 alert.showAndWait();
             } else {
                 System.out.println("Buscando");
-                Juego.juegosEncontrados(txtTitulo.getText(),txtAño.getText());   
-                try {
-                App.setRoot("search");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                Juego.juegosEncontrados(txtTitulo.getText(),txtAño.getText()); 
+                if(juegosEncontrados.largo()>0){
+                    try {
+                        App.setRoot("search");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }else{
+                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setTitle("No se encontraron resultados");
+                    alert1.setHeaderText(null);
+                    alert1.setContentText("No se han encontrado resultados que concuerden con los parámetros buscados. \nIntente nuevamente.");
+                    alert1.showAndWait();
                 }
+                
             }
             
     }

@@ -66,6 +66,20 @@ public class CarritoController {
             lblIVA.setText(impuestoMostrado);
             lblTotal.setText(String.valueOf(subtotal+impuestos));
         }
+        
+        if(PrimaryController.carrito.largo()<=3){
+            btnCarrArriba.setDisable(true);
+            btnCarrAbajo.setDisable(true);
+        }
+        
+        if(PrimaryController.carrito.largo()==0){
+            System.out.println("carrito vacio");
+            try {
+            App.setRoot("primary");
+            } catch (IOException ex) {
+            ex.printStackTrace();
+            }
+        }
     }    
 
     @FXML
@@ -111,20 +125,30 @@ public class CarritoController {
                 e.printStackTrace();
             }
         
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Compra confirmada");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmación necesaria");
         alert.setHeaderText(null);
-        alert.setContentText("Has realizado correctamente tu compra. Gracias!");
-        PrimaryController.misJuegos = Juego.cargarJuegos("archivos/misjuegos.txt");
+        alert.setContentText("¿Estás seguro que deseas realizar esta compra? \nTu total es de: "+lblTotal.getText());
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Compra confirmada");
+            alert1.setHeaderText(null);
+            alert1.setContentText("Has realizado correctamente tu compra. Gracias!");
+            PrimaryController.misJuegos = Juego.cargarJuegos("archivos/misjuegos.txt");
         
-        PrimaryController.carrito=new DoubleCircularLL();
-        alert.showAndWait();
-        try {
-            App.setRoot("primary");
+            PrimaryController.carrito=new DoubleCircularLL();
+            alert.showAndWait();
+            try {
+                App.setRoot("primary");
             
-        } catch (IOException ex) {
-            ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
+        
+        
+        
         
         
     }
@@ -173,11 +197,20 @@ public class CarritoController {
                         e.printStackTrace();
                     }
                 }
-                try {
-                    App.setRoot("carrito");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                if(PrimaryController.carrito.largo()==0){
+                    try {
+                        App.setRoot("primary");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }else{
+                    try {
+                        App.setRoot("carrito");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
+                
                 });
         }
     }

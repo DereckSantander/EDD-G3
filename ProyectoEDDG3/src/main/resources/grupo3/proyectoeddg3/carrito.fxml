@@ -33,7 +33,10 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <Label text="ⓘ Para eliminar un videojuego, pulsa en su nombre." />
+               </children></HBox>
          </children>
       </HBox>
       <HBox prefHeight="700.0" prefWidth="1200.0">
