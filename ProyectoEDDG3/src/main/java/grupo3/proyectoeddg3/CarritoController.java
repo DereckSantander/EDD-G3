@@ -171,14 +171,13 @@ public class CarritoController {
                 App.setImage(j.getTitulo(),App.pathImagesJuegos,ivJuego,150,210,".jpg");
                 Label lblTitulo=new Label(j.getTitulo());
                 Label lblPrecio=new Label(String.valueOf(j.getPrecio()));
-               
                 
                 hboxInfo.getChildren().addAll(ivJuego,lblTitulo);
                 hbox.getChildren().addAll(hboxInfo,lblPrecio);
                 
                 carritoPane.getChildren().addAll(hbox);
                 
-                lblTitulo.setOnMouseClicked(ev ->{
+                ivJuego.setOnMouseClicked(ev ->{
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmar eliminar juego");
                 alert.setHeaderText(null);

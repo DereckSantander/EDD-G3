@@ -17,6 +17,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class JuegoController {
@@ -80,13 +81,10 @@ public class JuegoController {
 
     @FXML
     private Label lblUsuario3;
-
     @FXML
     private Label lblValoracion1;
-
     @FXML
     private Label lblValoracion2;
-
     @FXML
     private Label lblValoracion3;
     
@@ -98,6 +96,12 @@ public class JuegoController {
     public static DoubleCircularLL<Feedback> lista;
     
     public static String textoCmbFiltro;
+    @FXML
+    private HBox hboxestrellas1;
+    @FXML
+    private HBox hboxestrellas2;
+    @FXML
+    private HBox hboxestrellas3;
     
     @FXML
     private void switchToPrimary() throws IOException {
@@ -249,16 +253,19 @@ public class JuegoController {
         DoubleCircularLL<Feedback> feedbackMostrados = feedbackCargado(listaTrabajar, indice);
         
         lblUsuario1.setText(feedbackMostrados.getIndex(0).getNombreUsuario());
-        lblValoracion1.setText(String.valueOf(feedbackMostrados.getIndex(0).getValoracion()));
+        lblValoracion1.setText(setEstrellasTexto(feedbackMostrados.getIndex(0)));
         lblTexto1.setText(feedbackMostrados.getIndex(0).getDescripcion());
+        //setEstrellas(feedbackMostrados.getIndex(0),hboxestrellas1);
         
         lblUsuario2.setText(feedbackMostrados.getIndex(1).getNombreUsuario());
-        lblValoracion2.setText(String.valueOf(feedbackMostrados.getIndex(1).getValoracion()));
+        lblValoracion2.setText(setEstrellasTexto(feedbackMostrados.getIndex(1)));
         lblTexto2.setText(feedbackMostrados.getIndex(1).getDescripcion());
+        //setEstrellas(feedbackMostrados.getIndex(1),hboxestrellas2);
         
         lblUsuario3.setText(feedbackMostrados.getIndex(2).getNombreUsuario());
-        lblValoracion3.setText(String.valueOf(feedbackMostrados.getIndex(2).getValoracion()));
+        lblValoracion3.setText(setEstrellasTexto(feedbackMostrados.getIndex(2)));
         lblTexto3.setText(feedbackMostrados.getIndex(2).getDescripcion());
+        //setEstrellas(feedbackMostrados.getIndex(2),hboxestrellas3);
     }
     //Devuelve la lista de reseñas de ese juego específico.
     public static DoubleCircularLL<Feedback> feedbackJuego(){
@@ -282,6 +289,23 @@ public class JuegoController {
         return listaCargada;
     }
     
+    void setEstrellas(Feedback fb, HBox hbox){
+        
+        for(int a=0; a<fb.getValoracion();a++){
+            /*ImageView iv=new ImageView();
+            App.setImage("estrella","archivos/",iv,30,30,".png");
+            hbox.getChildren().add(iv);
+*/
+        }
+        
+    }
     
+    String setEstrellasTexto(Feedback fb){
+        String estrellas="";
+        for(int a=0; a<fb.getValoracion();a++){
+            estrellas+="♥ ";
+        }
+        return estrellas;
+    }
     
 }

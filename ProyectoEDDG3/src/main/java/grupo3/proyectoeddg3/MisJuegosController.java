@@ -96,6 +96,7 @@ public class MisJuegosController{
                juegosPane.getChildren().add(vbox);
                juegosPane.setMargin(vbox,new Insets(0,0,10,0));
                
+               ivJuego.setOnMouseClicked(ev ->juegoLabel(lbl));
                lbl.setOnMouseClicked(ev ->juegoLabel(lbl));
            }
     }

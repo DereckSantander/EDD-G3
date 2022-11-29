@@ -133,6 +133,10 @@ public class PrimaryController {
         lblC3.setText(juegosMostrados.getIndex(2).getTitulo());
         lblC4.setText(juegosMostrados.getIndex(3).getTitulo());
         
+        imvC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
+        imvC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
+        imvC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
+        imvC4.setOnMouseClicked(ev ->juegoLabel(lblC4));
         lblC1.setOnMouseClicked(ev ->juegoLabel(lblC1));
         lblC2.setOnMouseClicked(ev ->juegoLabel(lblC2));
         lblC3.setOnMouseClicked(ev ->juegoLabel(lblC3));
@@ -152,6 +156,10 @@ public class PrimaryController {
         lbl3.setText(categoriasMostradas.getIndex(2).getGenero());
         lbl4.setText(categoriasMostradas.getIndex(3).getGenero());
         
+        imv1.setOnMouseClicked(ev ->categoriaLabel(lbl1));
+        imv2.setOnMouseClicked(ev ->categoriaLabel(lbl2));
+        imv3.setOnMouseClicked(ev ->categoriaLabel(lbl3));
+        imv4.setOnMouseClicked(ev ->categoriaLabel(lbl4));
         lbl1.setOnMouseClicked(ev ->categoriaLabel(lbl1));
         lbl2.setOnMouseClicked(ev ->categoriaLabel(lbl2));
         lbl3.setOnMouseClicked(ev ->categoriaLabel(lbl3));

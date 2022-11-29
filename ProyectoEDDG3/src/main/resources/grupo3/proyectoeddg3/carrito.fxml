@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.CarritoController">
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.CarritoController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -35,7 +35,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
                <children>
-                  <Label text="ⓘ Para eliminar un videojuego, pulsa en su nombre." />
+                  <Label text="ⓘ Para eliminar un videojuego, pulsa en su portada." />
                </children></HBox>
          </children>
       </HBox>

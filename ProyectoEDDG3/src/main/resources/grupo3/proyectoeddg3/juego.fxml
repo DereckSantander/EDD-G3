@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbFondoJuego" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
+<VBox fx:id="vbFondoJuego" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
    <children>
       <HBox prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -137,11 +137,18 @@
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
                                           <Label fx:id="lblUsuario1" prefHeight="32.0" prefWidth="200.0" text="Label" />
-                                          <Label fx:id="lblValoracion1" prefHeight="33.0" prefWidth="58.0" text="Label">
+                                          <HBox fx:id="hboxestrellas1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="6.0">
                                              <HBox.margin>
-                                                <Insets left="325.0" />
+                                                <Insets left="250.0" />
                                              </HBox.margin>
-                                          </Label>
+                                             <children>
+                                                <Label fx:id="lblValoracion1" alignment="CENTER" text="Label">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </HBox>
                                     <Label fx:id="lblTexto1" text="Label" wrapText="true">
@@ -155,11 +162,18 @@
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
                                           <Label fx:id="lblUsuario2" prefHeight="32.0" prefWidth="200.0" text="Label" />
-                                          <Label fx:id="lblValoracion2" prefHeight="33.0" prefWidth="58.0" text="Label">
+                                          <HBox fx:id="hboxestrellas2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="6.0">
                                              <HBox.margin>
-                                                <Insets left="325.0" />
+                                                <Insets left="250.0" />
                                              </HBox.margin>
-                                          </Label>
+                                             <children>
+                                                <Label fx:id="lblValoracion2" alignment="CENTER" text="Label">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </HBox>
                                     <Label fx:id="lblTexto2" text="Label" wrapText="true">
@@ -173,11 +187,18 @@
                                     <HBox prefHeight="32.0" prefWidth="711.0">
                                        <children>
                                           <Label fx:id="lblUsuario3" prefHeight="32.0" prefWidth="200.0" text="Label" />
-                                          <Label fx:id="lblValoracion3" prefHeight="33.0" prefWidth="58.0" text="Label">
+                                          <HBox fx:id="hboxestrellas3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="6.0">
                                              <HBox.margin>
-                                                <Insets left="325.0" />
+                                                <Insets left="250.0" />
                                              </HBox.margin>
-                                          </Label>
+                                             <children>
+                                                <Label fx:id="lblValoracion3" alignment="CENTER" text="Label">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </HBox>
                                     <Label fx:id="lblTexto3" text="Label" wrapText="true">
