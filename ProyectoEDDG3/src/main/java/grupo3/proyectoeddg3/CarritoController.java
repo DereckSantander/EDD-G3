@@ -136,15 +136,16 @@ public class CarritoController {
             alert1.setHeaderText(null);
             alert1.setContentText("Has realizado correctamente tu compra. Gracias!");
             PrimaryController.misJuegos = Juego.cargarJuegos("archivos/misjuegos.txt");
-        
             PrimaryController.carrito=new DoubleCircularLL();
-            alert.showAndWait();
+            alert1.showAndWait();
             try {
                 App.setRoot("primary");
             
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+        } else {
+            
         }
         
         
