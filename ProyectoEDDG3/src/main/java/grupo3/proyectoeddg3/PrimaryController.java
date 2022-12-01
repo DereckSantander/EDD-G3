@@ -168,11 +168,13 @@ public class PrimaryController {
     
     @FXML
     private void misJuegos(){
+        MisJuegosController.listaMisJuegos = misJuegos;
+        MisJuegosController.textoCmbFiltroMisJuegos = "";
         try {
-                App.setRoot("misjuegos");
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+            App.setRoot("misjuegos");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
     @FXML

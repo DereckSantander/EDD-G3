@@ -10,6 +10,7 @@ import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import grupo3.proyectoeddg3.modelo.Juego;
 import java.io.IOException;
 import java.net.URL;
+import java.util.PriorityQueue;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -38,10 +40,21 @@ public class MisJuegosController{
     @FXML
     private Button btnmjIzq;
     
+    @FXML
+    private ComboBox<String> cmbFiltroMisJuegos;
+    
+    public static String textoCmbFiltroMisJuegos;
+    
+    public static DoubleCircularLL<Juego> listaMisJuegos;
+    
     
     public static int miJuegoMostrado = 0;
     
     public void initialize() {
+        
+        cmbFiltroMisJuegos.getItems().addAll("Más caro primero","Más barato primero");
+        cmbFiltroMisJuegos.setValue(textoCmbFiltroMisJuegos);
+        
         PrimaryController.desdeMisJuegos = true;
         llenarJuegos();
         
@@ -55,6 +68,18 @@ public class MisJuegosController{
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("primary");
+    }
+    
+    @FXML
+    void filtrarMisJuegos(ActionEvent event) {
+        misJuegosOrdenados();
+        miJuegoMostrado = 0;
+        llenarJuegos();
+        try {
+            App.setRoot("misjuegos");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
     @FXML
@@ -99,6 +124,33 @@ public class MisJuegosController{
                ivJuego.setOnMouseClicked(ev ->juegoLabel(lbl));
                lbl.setOnMouseClicked(ev ->juegoLabel(lbl));
            }
+    }
+    
+    void misJuegosOrdenados(){
+        DoubleCircularLL<Juego> miJuegoOrdenado = new DoubleCircularLL<>();
+        PriorityQueue<Juego> misJuegosPQ;
+        
+        if(cmbFiltroMisJuegos.getValue().equals("Más caro primero")){
+            textoCmbFiltroMisJuegos = "Más caro primero";
+            misJuegosPQ = new PriorityQueue<>((Juego j1, Juego j2)->{
+                return Math.round(j2.getPrecio()) - Math.round(j1.getPrecio());
+            });
+        }else{
+            textoCmbFiltroMisJuegos = "Más barato primero";
+            misJuegosPQ = new PriorityQueue<>((Juego j1, Juego j2)->{
+                return Math.round(j1.getPrecio()) - Math.round(j2.getPrecio());
+            });
+        }
+        
+        for(Juego l: listaMisJuegos){
+            misJuegosPQ.offer(l);
+        }
+        
+        while(!misJuegosPQ.isEmpty()){
+            miJuegoOrdenado.addLast(misJuegosPQ.poll());
+        }
+        
+        listaMisJuegos = miJuegoOrdenado;
     }
     
     

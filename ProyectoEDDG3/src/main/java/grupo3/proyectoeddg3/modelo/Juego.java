@@ -1,5 +1,6 @@
 
 package grupo3.proyectoeddg3.modelo;
+import grupo3.proyectoeddg3.MisJuegosController;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -159,13 +160,13 @@ public class Juego {
     public static DoubleCircularLL<Juego> misJuegosCargados(int indice){
         DoubleCircularLL<Juego> listaCargada = new DoubleCircularLL<>();
         int tope = indice+13;
-        if(PrimaryController.misJuegos.largo()<14){
-            for(Juego j: PrimaryController.misJuegos){
+        if(MisJuegosController.listaMisJuegos.largo()<14){
+            for(Juego j: MisJuegosController.listaMisJuegos){
                 listaCargada.addLast(j);
             }
         }else{
             for(int i = indice;i<=tope;i++){
-                Juego juego = PrimaryController.misJuegos.getIndex(i);
+                Juego juego = MisJuegosController.listaMisJuegos.getIndex(i);
                 listaCargada.addLast(juego);
             }
         }
@@ -175,16 +176,12 @@ public class Juego {
     public static void juegosGenero(String genero){
         
         PrimaryController.juegosEncontrados=new DoubleCircularLL();
-
-        
-        //System.out.println("busco por genero");
         
         for(Juego j: PrimaryController.listaJuegos){
                 if(j.getGenero().equals(genero)){
                     PrimaryController.juegosEncontrados.addLast(j);
                 }
             }
-        
         
         PrimaryController.busqueda=genero;
     }

@@ -96,6 +96,7 @@ public class JuegoController {
     public static DoubleCircularLL<Feedback> lista;
     
     public static String textoCmbFiltro;
+    
     @FXML
     private HBox hboxestrellas1;
     @FXML
@@ -159,7 +160,6 @@ public class JuegoController {
     
     @FXML
     void filtrarFeedback(ActionEvent event) {
-        System.out.println("boton");
         feedbackOrdenado();
         feedbackMostrado = 0;
         llenarFeedback(lista,feedbackMostrado);
