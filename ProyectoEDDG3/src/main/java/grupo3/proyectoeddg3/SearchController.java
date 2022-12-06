@@ -37,10 +37,12 @@ public class SearchController{
     @FXML private Button btn_buscar;
     @FXML private Button btnVolver;
     @FXML private Label lblResultado;
-    @FXML private FlowPane resultadosPane;  
+    @FXML private FlowPane resultadosPane;
+    @FXML private ImageView imvLogoTienda;
     
     public static int busquedaMostrada= 0;
     public void initialize() {
+        App.setImage("logoTienda","archivos/",imvLogoTienda, 300, 73,".jpg");
         PrimaryController.desdeBusqueda = true;
         
         if(PrimaryController.busquedaC){

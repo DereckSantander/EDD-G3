@@ -45,6 +45,9 @@ public class JuegoController {
 
     @FXML
     private ImageView imvJuego2;
+    
+    @FXML
+    private ImageView imvLogoTienda;
 
     @FXML
     private Label lblDesarrolladores;
@@ -120,6 +123,7 @@ public class JuegoController {
         
     
     public void initialize(){
+        App.setImage("logoTienda","archivos/",imvLogoTienda, 300, 73,".jpg");
         vbFondoJuego.setId(PrimaryController.j.getTitulo());
         cmbOrdenFeedback.getItems().addAll("Positivas primero","Negativas primero");
         cmbOrdenFeedback.setValue(textoCmbFiltro);

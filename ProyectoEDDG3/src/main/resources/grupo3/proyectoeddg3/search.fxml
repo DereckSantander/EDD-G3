@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -27,11 +28,7 @@
                <children>
                   <Button fx:id="btn_buscar" layoutX="655.0" layoutY="34.0" mnemonicParsing="false" prefHeight="35.0" text="Buscar" visible="false" />
                   <TextField layoutX="426.0" layoutY="34.0" visible="false" />
-                  <Label layoutX="126.0" layoutY="3.0" text="DMJ">
-                     <font>
-                        <Font name="Futura Medium" size="65.0" />
-                     </font>
-                  </Label>
+                  <ImageView fx:id="imvLogoTienda" fitHeight="73.0" fitWidth="200.0" layoutX="102.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </children>

@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import grupo3.proyectoeddg3.list.DoubleCircularLL;
 import grupo3.proyectoeddg3.modelo.Feedback;
 import grupo3.proyectoeddg3.modelo.Juego;
+import java.io.FileInputStream;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,6 +48,7 @@ public class PrimaryController {
     @FXML private Label lblC3;
     @FXML private Label lblC4;
     @FXML private Button btnBuscar;
+    @FXML private ImageView imvLogoTienda;
     
     public static Juego j;
     public static DoubleCircularLL<Juego> listaJuegos = Juego.cargarJuegos("archivos/juegos.txt");
@@ -65,6 +67,7 @@ public class PrimaryController {
     public static boolean desdeMisJuegos = false;
     
     public void initialize(){
+        App.setImage("logoTienda","archivos/",imvLogoTienda, 250, 73,".jpg");
         desdeBusqueda = false;
         desdeMisJuegos = false;
         llenarCarr(juegoMostrado);

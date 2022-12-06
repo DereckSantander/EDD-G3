@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbFondoJuego" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
+<VBox fx:id="vbFondoJuego" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo3.proyectoeddg3.JuegoController">
    <children>
       <HBox prefHeight="100.0" prefWidth="1200.0">
          <children>
@@ -22,7 +22,10 @@
                   </Button>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="400.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
+               <children>
+                  <ImageView fx:id="imvLogoTienda" fitHeight="73.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children></HBox>
             <HBox prefHeight="100.0" prefWidth="400.0" />
          </children>
       </HBox>

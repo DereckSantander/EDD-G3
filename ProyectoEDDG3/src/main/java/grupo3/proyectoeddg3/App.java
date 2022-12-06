@@ -42,7 +42,7 @@ public class App extends Application {
         launch();
     }
     
-    public static void setImage(String name,String path,ImageView iView, int ancho, int alto,String formato){
+    public static void setImage(String name,String path,ImageView iView, int ancho, int alto, String formato){
         InputStream input = null;
         Image image = null;
         try {
