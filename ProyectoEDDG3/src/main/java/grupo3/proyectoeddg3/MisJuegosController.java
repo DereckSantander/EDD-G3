@@ -28,7 +28,7 @@ import javafx.scene.layout.VBox;
 /**
  * FXML Controller class
  *
- * @author Dereck Santander
+ * @author Grupo3
  */
 public class MisJuegosController{
 

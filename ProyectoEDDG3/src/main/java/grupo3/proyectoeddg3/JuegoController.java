@@ -20,6 +20,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+/**
+ * FXML Controller class
+ *
+ * @author Grupo3
+ */
+
 public class JuegoController {
     
     @FXML

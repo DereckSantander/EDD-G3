@@ -19,6 +19,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
+/**
+ * FXML Controller class
+ *
+ * @author Grupo3
+ */
+
 public class PrimaryController {
     
     @FXML private Button btnCarrDer;

@@ -21,11 +21,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+
 /**
  * FXML Controller class
  *
- * @author user
+ * @author Grupo3
  */
+
 public class SearchController{
 
     @FXML

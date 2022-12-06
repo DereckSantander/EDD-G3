@@ -32,7 +32,7 @@ import javafx.scene.text.TextFlow;
 /**
  * FXML Controller class
  *
- * @author Dereck Santander
+ * @author Grupo3
  */
 public class CarritoController {
 
