@@ -60,11 +60,11 @@ public class CarritoController {
         if(PrimaryController.carrito.largo()!=0){
             llenarCarrito();
             int subtotal = Juego.subtotalCarrito(PrimaryController.carrito);
-            lblSubtotal.setText(String.valueOf(subtotal));
+            lblSubtotal.setText("$"+String.valueOf(subtotal));
             double impuestos = (subtotal * 0.12);
             String impuestoMostrado = String.format("%.2f", impuestos);
-            lblIVA.setText(impuestoMostrado);
-            lblTotal.setText(String.valueOf(subtotal+impuestos));
+            lblIVA.setText("$"+impuestoMostrado);
+            lblTotal.setText("$"+String.valueOf(subtotal+impuestos));
         }
         
         if(PrimaryController.carrito.largo()<=3){
@@ -171,8 +171,8 @@ public class CarritoController {
                 ImageView ivJuego=new ImageView();
                 App.setImage(j.getTitulo(),App.pathImagesJuegos,ivJuego,150,210,".jpg");
                 Label lblTitulo=new Label(j.getTitulo());
-                Label lblPrecio=new Label(String.valueOf(j.getPrecio()));
-                
+                Label lblPrecio=new Label("$" + String.valueOf(j.getPrecio()));
+   
                 hboxInfo.getChildren().addAll(ivJuego,lblTitulo);
                 hbox.getChildren().addAll(hboxInfo,lblPrecio);
                 
